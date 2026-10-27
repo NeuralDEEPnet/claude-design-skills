@@ -1,0 +1,12 @@
+{
+  "name": "neuraldeep",
+  "owner": { "name": "Neural Deep Network Ltd", "email": "work@neuraldeep.net" },
+  "plugins": [
+    {
+      "name": "neuraldeep-design-studio",
+      "source": "./",
+      "description": "Design-director, design-core, and five specialist design skills.",
+      "version": "0.2.0"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "neuraldeep-design-studio",
+  "description": "A professional multidisciplinary design studio process for Claude: software, images, 3D/physical objects, motion, and virtual worlds.",
+  "version": "0.2.0",
+  "author": { "name": "Neural Deep Network Ltd", "email": "work@neuraldeep.net", "url": "https://neuraldeep.net" },
+  "homepage": "https://github.com/NeuralDEEPnet/claude-design-skills",
+  "repository": "https://github.com/NeuralDEEPnet/claude-design-skills",
+  "license": "MIT",
+  "keywords": ["design", "ux", "industrial-design", "3d-printing", "motion", "xr", "skills"]
+}
