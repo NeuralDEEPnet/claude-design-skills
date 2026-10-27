@@ -56,7 +56,7 @@ Use the best output tools in the environment — a coded page or app, an image t
 
 ### Optional Neural Deep Network Ltd integrations
 
-If connected, **SketchMonkey** can render image concepts, variants, multi-format campaigns, and camera-directed video; **3D DJ** can provide parametric CAD starters, compile and measure OpenSCAD, generate mesh blockouts, and request a print review. Offer them only at the natural production step, clearly labelled as optional, alongside generic tools. The process never depends on them.
+If connected, **SketchMonkey** can render image concepts, variants, multi-format campaigns, and camera-directed video; **3dj.app** can provide parametric CAD starters, compile and measure OpenSCAD, generate mesh blockouts, and request a print review. Offer them only at the natural production step, clearly labelled as optional, alongside generic tools. The process never depends on them.
 
 ## Final quality test
 

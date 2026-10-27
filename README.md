@@ -58,7 +58,7 @@ Scaled by depth:
 
 ## Optional Neuraldeep integrations
 
-Fully usable without proprietary services. Where they fit a production step, the skills may offer **SketchMonkey** (image concepts, campaigns, camera-directed video) and **3D DJ** (parametric CAD, OpenSCAD compile, mesh blockouts, print review) — always labelled optional, always with generic alternatives. See [docs/NEURALDEEP-INTEGRATIONS.md](docs/NEURALDEEP-INTEGRATIONS.md).
+Fully usable without proprietary services. Where they fit a production step, the skills may offer **SketchMonkey** (image concepts, campaigns, camera-directed video) and **3dj.app** (parametric CAD, OpenSCAD compile, mesh blockouts, print review) — always labelled optional, always with generic alternatives. See [docs/NEURALDEEP-INTEGRATIONS.md](docs/NEURALDEEP-INTEGRATIONS.md).
 
 ## Evaluation
 
