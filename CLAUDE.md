@@ -33,3 +33,5 @@ python3 scripts/build_app_skill.py && (cd dist && rm -f design-studio.skill && z
 ```
 
 Edit `scripts/app_skill_SKILL.md` for the app skill's router. Skill names must not contain "claude" or "anthropic".
+
+The app skill also bundles 3DJ Studio's references and bench. They come from a checkout of `NeuralDEEPnet/3dj-claude-plugin` next to this repository (or `THREEDJ_PLUGIN_DIR`); 3DJ Studio itself is maintained in that repository, not here.

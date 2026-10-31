@@ -26,7 +26,7 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 /plugin install 3dj-concept@neuraldeep   # optional: text/image-to-3D concept meshes
 ```
 
-3DJ Studio adds `/3dj-make`, `/3dj-design` and `/3dj-print`, a `3dj-critic` review agent, the 3DJ MCP server, and a free local bench that compiles OpenSCAD, measures parts against print gates and renders views, comparisons and print checks — no account needed. 3DJ Concept adds `/3dj-concept` for generated concept meshes on a 3DJ account. See [plugins/3dj-studio](plugins/3dj-studio/README.md) and [plugins/3dj-concept](plugins/3dj-concept/README.md).
+3DJ Studio adds `/3dj-make`, `/3dj-design` and `/3dj-print`, a `3dj-critic` review agent, the 3DJ MCP server, and a free local bench that compiles OpenSCAD, measures parts against print gates and renders views, comparisons and print checks — no account needed. 3DJ Concept adds `/3dj-concept` for generated concept meshes on a 3DJ account. 3DJ Studio lives in its own repository, [NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin), and this marketplace installs it from there; 3DJ Concept is in [plugins/3dj-concept](plugins/3dj-concept/README.md).
 
 **Claude API / Agent SDK** — upload `dist/design-studio` via the Skills API.
 

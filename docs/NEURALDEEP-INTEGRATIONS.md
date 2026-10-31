@@ -44,7 +44,7 @@ Specialist Skills
 Generic tools OR optional MCP integrations
 ```
 
-The first adapter is **3DJ Studio** (`plugins/3dj-studio/`), a separate plugin in the same marketplace. It bundles the 3DJ MCP server, three production skills, an independent `3dj-critic` agent, and an MIT-licensed local bench that compiles OpenSCAD, measures against the 3DJ print gates and renders views, comparisons and print checks without any account. Generated concept meshes live in a second plugin, **3DJ Concept** (`plugins/3dj-concept/`), kept apart because the Claude directory treats AI media generation as an unsupported use case unless Anthropic permits it in writing. The core Design Studio plugin does not install or require it; `3d-object-design` hands off to it only when it is present.
+The first adapter is **3DJ Studio** ([NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin)), a separate plugin in its own repository that this marketplace installs from GitHub. It bundles the 3DJ MCP server, three production skills, an independent `3dj-critic` agent, and an MIT-licensed local bench that compiles OpenSCAD, measures against the 3DJ print gates and renders views, comparisons and print checks without any account. Generated concept meshes live in a second plugin, **3DJ Concept** (`plugins/3dj-concept/`), kept apart because the Claude directory treats AI media generation as an unsupported use case unless Anthropic permits it in writing. The core Design Studio plugin does not install or require it; `3d-object-design` hands off to it only when it is present.
 
 Further adapters may expose image generation, asset management, simulation, evaluation, or other production capabilities.
 

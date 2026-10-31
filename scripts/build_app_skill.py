@@ -8,6 +8,7 @@ seven sibling skills in skills/ are folded into one skill: a router SKILL.md
 Usage: python scripts/build_app_skill.py            -> dist/design-studio/
        then zip it: (cd dist && zip -r design-studio.skill design-studio)
 """
+import os
 import re
 import shutil
 from pathlib import Path
@@ -60,9 +61,10 @@ def main() -> None:
     print(f"built {OUT}")
 
 
-# 3DJ Studio (plugins/3dj-studio) is a separate Claude Code plugin; the app skill
-# carries its skills as references and its free bench as a script.
-TDJ = ROOT / "plugins" / "3dj-studio" / "skills"
+# 3DJ Studio lives in its own repository (NeuralDEEPnet/3dj-claude-plugin). The app skill carries
+# its skills as references and its free bench as a script, read from a checkout next to this
+# repository or from THREEDJ_PLUGIN_DIR. Without one, the app skill is built without them.
+TDJ = Path(os.environ.get("THREEDJ_PLUGIN_DIR", ROOT.parent / "3dj-claude-plugin")) / "skills"
 TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-print": "print.md"}
 TDJ_CONCEPT = ROOT / "plugins" / "3dj-concept" / "skills" / "3dj-concept" / "SKILL.md"
 TDJ_REFS = ["tools.md", "openscad.md", "brep-cad.md", "dfam.md", "form-cookbook.md"]
@@ -92,6 +94,8 @@ def relink_3dj(text: str) -> str:
 
 def build_3dj() -> None:
     if not TDJ.exists():
+        print(f"warning: no 3DJ Studio checkout at {TDJ.parent}; building without the 3DJ references "
+              "(clone NeuralDEEPnet/3dj-claude-plugin next to this repo or set THREEDJ_PLUGIN_DIR)")
         return
     (OUT / "references" / "3dj").mkdir(parents=True, exist_ok=True)
     (OUT / "scripts").mkdir(exist_ok=True)
