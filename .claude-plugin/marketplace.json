@@ -4,6 +4,9 @@
     "name": "Neural Deep Network Ltd",
     "email": "work@neuraldeep.net"
   },
+  "metadata": {
+    "description": "Neural Deep Network Ltd plugins for Claude: the Neuraldeep Design Studio and 3DJ, its CAD bench for printable objects."
+  },
   "plugins": [
     {
       "name": "neuraldeep-design-studio",
@@ -14,7 +17,13 @@
     {
       "name": "3dj-studio",
       "source": "./plugins/3dj-studio",
-      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts, concept meshes and print checks, with a free local compile, measure and preview bench.",
+      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts and print checks, with a free local compile, measure and preview bench.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "3dj-concept",
+      "source": "./plugins/3dj-concept",
+      "description": "Text- and image-to-3D concept meshes with 3DJ. Companion to 3DJ Studio.",
       "version": "0.1.0"
     }
   ]

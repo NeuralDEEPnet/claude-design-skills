@@ -64,7 +64,7 @@ Look at the views and the check every time. Settle key proportions by comparing 
 ## 6 · Finish: CMF, print, handoff
 
 - **CMF**: name the material and finish (matte PLA, PETG, ASA outdoors, TPU feet or grips), colour as a decision (two-tone by part or by a filament change at a set height), layer height for visible curves, surface treatments (fuzzy skin for grip).
-- **Optional upgrades** — offer once, labelled optional: a hero render with SketchMonkey if connected; an organic or sculptural variant with the 3dj-concept skill; an operator print quote with the 3dj-print skill.
+- **Optional next steps** — offer once: an operator print quote with the 3dj-print skill; an organic or sculptural variant with the 3dj-concept skill if it is installed.
 - **Handoff**: the views and check images, `.scad` and `.stl` per part, the knob table, key dimensions with evidence tags, assumptions to confirm, print settings, and the next prototype (e.g. "print only the cradle section at 30 mm tall to test the phone fit").
 
 ## Rules

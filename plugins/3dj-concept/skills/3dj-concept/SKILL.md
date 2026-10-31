@@ -1,19 +1,19 @@
 ---
 name: 3dj-concept
-description: Generate an organic or sculptural 3D concept mesh with 3DJ from a text prompt or an image — figurines, creatures, ornaments, sculptural vases, characters, props, and quick visual blockouts, including turning a SketchMonkey render or product sketch into 3D. Starts the job, follows it to completion, and returns the model with a one-tap link to open it in the 3DJ workbench. Use for "turn this picture into 3D", "make a 3D model of a dragon", "sculpt a…", "image to 3D", "text to 3D". Needs a signed-in 3DJ account; for measured, functional parts use 3dj-make instead.
+description: Generate an organic or sculptural 3D concept mesh with 3DJ from a text prompt or an image — figurines, creatures, ornaments, sculptural vases, characters, props, and quick visual blockouts, including turning a product render or sketch into 3D. Starts the job, follows it to completion, and returns the model with a one-tap link to open it in the 3DJ workbench. Use for "turn this picture into 3D", "make a 3D model of a dragon", "sculpt a…", "image to 3D", "text to 3D". Needs a signed-in 3DJ account; for measured, functional parts use 3dj-make instead.
 ---
 
 # 3DJ Concept — sculpt from words or pictures
 
 Concept meshes are for look, feel and silhouette: fast, expressive, non-parametric GLB files without reliable real-world units. They are not for fit-critical parts. When the request needs measured interfaces (a socket, a mount, a lid), use 3dj-make for that part and treat the concept as the decorative element.
 
-Tool details and routes: `../3dj-make/references/tools.md`. Below, `BENCH` means the absolute path of `../3dj-make/scripts/bench.mjs` resolved from this skill's folder.
+The 3DJ tools may appear under several names: from the 3DJ Studio plugin's `3dj` server, from the 3dj connector in Claude, or through the Adaptive gateway (`adaptive_proxy_mcp_tool` with `app: "3dj"`). Use whichever is present; the arguments are the same. If none is present, say that this skill needs the 3DJ connection (the 3DJ Studio plugin or the 3dj connector).
 
 ## 1 · Check the account and capacity
 
 Call `get_account_status` and `list_providers` (remaining hourly and daily allowance, which inputs are healthy).
 
-- **Not signed in**: say how to connect (Claude app: Settings → Connectors → 3dj; Claude Code: `/mcp` → 3dj → Authenticate) and offer the free route meanwhile — sculpt it in OpenSCAD with cookbook patterns 2 (pebble), 5 (lathe), 6 (twist) or 13 (faceted) through 3dj-make.
+- **Not signed in**: say how to connect (Claude app: Settings → Connectors → 3dj; Claude Code: `/mcp` → 3dj → Authenticate) and offer the free route meanwhile — sculpt it in OpenSCAD with the 3dj-make skill's form cookbook (pebble, lathe, twist or faceted patterns), if 3DJ Studio is installed.
 - **No allowance or providers down**: report the real status and when allowance resets if the tool says; do not retry in a loop.
 
 ## 2 · Write the generation prompt
@@ -22,7 +22,7 @@ One object, whole and centred, nothing else. Lead with silhouette and proportion
 
 > a squat ceramic owl, wide round body tapering to small ears, oversized almond eyes, folded wing grooves, glossy glaze look, single solid object, flat base
 
-**From an image** (`generate_from_image_url`): it needs a direct, public HTTPS image URL (12 MB or less) of one object on a clean background, ideally a three-quarter view. A SketchMonkey `render_concept` result URL works directly — that is the Design Studio pipeline: brief → render → 3D. Never upload a private attachment somewhere public to obtain a URL; ask the person for a link instead.
+**From an image** (`generate_from_image_url`): it needs a direct, public HTTPS image URL (12 MB or less) of one object on a clean background, ideally a three-quarter view. A product render the person already has works well. Never upload a private attachment somewhere public to obtain a URL; ask the person for a link instead.
 
 ## 3 · Start and follow the job
 
@@ -34,6 +34,6 @@ One object, whole and centred, nothing else. Lead with silhouette and proportion
 ## 4 · Hand it over
 
 - The download link, and the viewer link: `https://www.3dj.app/workspace?modelUrl=<URL-encoded downloadUrl>`.
-- If the file can be downloaded into the workspace, look at it on the bench: `node BENCH build model.glb --fit <longest side in mm>` → views and print check. Generated meshes are often not watertight; report what the check found instead of assuming. If downloading is blocked, say the preview is in the workbench link.
+- If the 3dj-make skill (3DJ Studio plugin) is available and the file can be downloaded into the workspace, look at it on its bench: `node <3dj-make folder>/scripts/bench.mjs build model.glb --fit <longest side in mm>` → views and print check. Generated meshes are often not watertight; report what the check found instead of assuming. Otherwise say the preview is in the workbench link.
 - Say what it is: a concept mesh (GLB), unitless until scaled, not a parametric or print-certified part. `refinementHandoff`, when returned, tells the workbench how to continue refining it.
 - Next moves: scale it to size, generate a variant (change one thing in the prompt), add a measured base or mount with 3dj-make, or check printing with 3dj-print.

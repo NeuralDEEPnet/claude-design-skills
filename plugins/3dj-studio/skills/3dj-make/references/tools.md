@@ -30,7 +30,7 @@ Tool calls may be deferred: load them through the session's tool search before t
 | `openscad_compile_model` | `code`, `parameters?` {name: number}, `buildVolumeMm?` [x,y,z] | Real OpenSCAD (Manifold) in an isolated worker: effective source, clamped parameter values, triangle count, closed-mesh check, bounding box, printer fit. 20/hour, 100/day. Creates **no** STL and no gallery record. |
 | `cad_list_models` | `limit?` 1–100 | The user's saved parametric and photo-CAD models with script source and parameter values. |
 | `list_providers` | `force?` | Health of each generation backend, supported inputs, remaining hourly/daily generation allowance. |
-| `generate_from_text` | `prompt`, `negativePrompt?` | Starts an asynchronous concept mesh. Returns `modelId`, `status: "processing"`. Uses allowance. |
+| `generate_from_text` | `prompt`, `negativePrompt?` | Starts an asynchronous concept mesh (used by the separate 3dj-concept plugin). Returns `modelId`, `status: "processing"`. Uses allowance. |
 | `generate_from_image_url` | `imageUrl` (public HTTPS, ≤ 12 MB), `name?` | Image-to-3D. Same polling. |
 | `get_generation_status` | `modelId` | `processing` / `complete` / `failed`, progress, provider, `downloadUrl` when complete, or the real failure reason. |
 | `list_my_models` | `limit?`, `status?` (`complete`/`failed`/`processing`) | The user's models, newest first. |
@@ -54,11 +54,11 @@ Tool calls may be deferred: load them through the session's tool search before t
 |---|---|
 | Open the workbench (OpenSCAD and B-Rep editors, STEP/STL export, gallery save) | `https://www.3dj.app/workspace` |
 | Open a generated mesh in the viewer | `https://www.3dj.app/workspace?modelUrl=<URL-encoded downloadUrl>` |
-| Start image-to-3D from a reference image (e.g. a SketchMonkey render) | `https://www.3dj.app/workspace?ref=<URL-encoded image URL>` |
+| Start image-to-3D from a reference image (e.g. a product render) | `https://www.3dj.app/workspace?ref=<URL-encoded image URL>` |
 | Mint a per-user API key (CLI and header-based hosts) | `https://www.3dj.app/agents` |
 
 There is no deep link that loads source code: for OpenSCAD or B-Rep scripts, tell the person to open the workbench, pick the matching editor and paste the file.
 
 ## The free local bench
 
-`scripts/bench.mjs` (in the 3dj-make skill folder) needs only Node 18+. It compiles OpenSCAD with the official WebAssembly build (OpenSCAD 2025.01, Manifold backend — the same backend as `openscad_compile_model`), installed once into `~/.cache/3dj-bench` (override with `THREEDJ_BENCH_HOME`). It reads STL and GLB too. Use it for every iteration; use `openscad_compile_model` when an official 3DJ measurement is wanted or when Node is unavailable.
+`scripts/bench.mjs` (in the 3dj-make skill folder) needs only Node 18+. It compiles OpenSCAD with the official WebAssembly build (OpenSCAD 2025.01, Manifold backend — the same backend as `openscad_compile_model`), which `node BENCH setup` downloads once into `~/.cache/3dj-bench` (override with `THREEDJ_BENCH_HOME`) after the person agrees. It reads STL and GLB too. Use it for every iteration; use `openscad_compile_model` when an official 3DJ measurement is wanted or when Node is unavailable.

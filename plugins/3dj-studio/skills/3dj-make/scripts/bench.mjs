@@ -8,15 +8,17 @@
  *   node bench.mjs compare lamp.scad@height=120 lamp.scad@height=160
  *   node bench.mjs orient  part.scad|part.stl [--bed 180,180,180]
  *   node bench.mjs params  part.scad
+ *   node bench.mjs setup
  *
  * Inputs: OpenSCAD source (.scad, compiled locally with the OpenSCAD WebAssembly
- * engine, installed once on first use), STL (binary or ASCII), or GLB.
+ * engine, which `node bench.mjs setup` downloads once from the npm registry, pinned and
+ * SHA-512 verified), STL (binary or ASCII), or GLB.
  * Checks mirror the 3DJ Design Evidence Pack v1 gates: watertight shell,
  * 0.8 mm nozzle-safe wall, 1.2 mm recommended wall, 45° overhang,
  * 220 × 220 × 250 mm bed, PLA 1.24 g/cm³. They are geometry screens, not a
  * manufacturing certification. Needs Node 18+ and nothing else.
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { deflateSync } from "node:zlib";
 import os from "node:os";
@@ -24,7 +26,11 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const VERSION = "0.1.0";
-const ENGINE = "openscad-wasm-prebuilt@1.2.0";
+// The OpenSCAD engine is downloaded only by an explicit `setup` command: one pinned package from the npm
+// registry, install scripts disabled, verified against this SHA-512 before it is ever loaded.
+const ENGINE_PKG = "openscad-wasm-prebuilt";
+const ENGINE_VERSION = "1.2.0";
+const ENGINE_INTEGRITY = "sha512-JfXJlopHVHvsYiVYUKYDXkg8yOkABm8zclo8zPrSRBeeICR+fitesO6NRwBdAzSdbtOYh6Scmuz/XLyhllbzYA==";
 const GATES = Object.freeze({ wall: 0.8, wallTarget: 1.2, overhangDeg: 45, bed: [220, 220, 250], densityPLA: 1.24 });
 
 // ───────────────────────────── utilities ─────────────────────────────
@@ -45,6 +51,7 @@ const HELP = `3DJ bench ${VERSION} — free local compile, measure and preview f
   node bench.mjs compare part.scad@height=120 part.scad@height=160    parameter variants of one file
   node bench.mjs orient  <part> [options]                            find the print orientation
   node bench.mjs params  <part.scad>                                 list customizer parameters
+  node bench.mjs setup                                               one-time: download and verify the OpenSCAD engine
 
 Options
   -D name=value       override a top-level OpenSCAD parameter (repeatable)
@@ -64,6 +71,9 @@ Options
   --silhouette right  compare silhouettes from the side instead of the front
   --lenient           accept OpenSCAD warnings about unknown names or bad arguments
   --json              print the report as JSON on stdout (nothing else)
+
+Compiling .scad needs the OpenSCAD engine: run "setup" once (a pinned ${ENGINE_PKG} ${ENGINE_VERSION} download of about
+11 MB from the npm registry, SHA-512 verified, install scripts disabled). STL and GLB files work without it.
 
 Outputs: NAME.views.png, NAME.check.png, NAME.report.json (+ NAME.stl from .scad);
 compare → NAME.png; orient → NAME.orient.png + NAME.oriented.stl.
@@ -121,31 +131,54 @@ function numList(s, n, flag) {
 }
 
 // ─────────────────────────── OpenSCAD engine ───────────────────────────
+const engineHome = () => process.env.THREEDJ_BENCH_HOME || path.join(os.homedir(), ".cache", "3dj-bench");
+const engineEntry = (home) => path.join(home, "node_modules", ENGINE_PKG, "dist", "openscad.js");
+function installedIntegrity(home) {
+  try {
+    const lock = JSON.parse(readFileSync(path.join(home, "package-lock.json"), "utf8"));
+    const entry = lock.packages?.[`node_modules/${ENGINE_PKG}`];
+    return entry && entry.version === ENGINE_VERSION ? entry.integrity : null;
+  } catch { return null; }
+}
+const engineReady = (home) => existsSync(engineEntry(home)) && installedIntegrity(home) === ENGINE_INTEGRITY;
+
 let enginePromise;
 function loadEngine() {
   enginePromise ??= (async () => {
-    try { return await import("openscad-wasm-prebuilt"); } catch { /* not installed beside the script */ }
-    const home = process.env.THREEDJ_BENCH_HOME || path.join(os.homedir(), ".cache", "3dj-bench");
-    const entry = path.join(home, "node_modules", "openscad-wasm-prebuilt", "dist", "openscad.js");
-    if (!existsSync(entry)) {
-      log(`First run: installing the OpenSCAD engine (${ENGINE}, about 11 MB) into ${home} …`);
-      mkdirSync(home, { recursive: true });
-      const pkg = path.join(home, "package.json");
-      if (!existsSync(pkg)) writeFileSync(pkg, JSON.stringify({ name: "3dj-bench-engine", private: true }) + "\n");
-      const win = process.platform === "win32";
-      try {
-        execFileSync(win ? "npm.cmd" : "npm", ["install", "--prefix", home, "--no-audit", "--no-fund", "--update-notifier=false", "--loglevel=error", ENGINE],
-          { stdio: ["ignore", 2, 2], shell: win });
-      } catch (e) {
-        fail(`Could not install the OpenSCAD engine (${String(e.message).split("\n")[0]}).\n` +
-          `Install it once with:  npm install --prefix "${home}" ${ENGINE}\n` +
-          `or pass an .stl (for example exported from the 3DJ workbench) instead of .scad.`);
-      }
-      if (!existsSync(entry)) fail(`The OpenSCAD engine did not install into ${home}.`);
+    const home = engineHome();
+    if (!engineReady(home)) {
+      fail(`The OpenSCAD engine is not installed yet. It is a one-time download of ${ENGINE_PKG} ${ENGINE_VERSION} ` +
+        `(about 11 MB) from the npm registry into ${home}, verified against a pinned SHA-512 hash, with install scripts disabled.\n` +
+        `Install it with:  node ${process.argv[1]} setup\n` +
+        "STL and GLB files work without it.", 3);
     }
-    return import(pathToFileURL(entry).href);
+    return import(pathToFileURL(engineEntry(home)).href);
   })();
   return enginePromise;
+}
+
+function cmdSetup() {
+  const home = engineHome();
+  const report = { engine: ENGINE_PKG, version: ENGINE_VERSION, integrity: ENGINE_INTEGRITY, home };
+  if (engineReady(home)) return { report: { ...report, status: "already-installed" }, text: `OpenSCAD engine already installed and verified: ${ENGINE_PKG} ${ENGINE_VERSION} in ${home}` };
+  mkdirSync(home, { recursive: true });
+  writeFileSync(path.join(home, "package.json"), JSON.stringify({ name: "3dj-bench-engine", private: true }) + "\n");
+  log(`Downloading ${ENGINE_PKG} ${ENGINE_VERSION} (about 11 MB) from the npm registry into ${home} …`);
+  const win = process.platform === "win32";
+  try {
+    execFileSync(win ? "npm.cmd" : "npm",
+      ["install", "--prefix", home, "--ignore-scripts", "--save-exact", "--no-audit", "--no-fund", "--update-notifier=false", "--loglevel=error", `${ENGINE_PKG}@${ENGINE_VERSION}`],
+      { stdio: ["ignore", 2, 2], shell: win });
+  } catch (e) {
+    fail(`npm could not install ${ENGINE_PKG} ${ENGINE_VERSION} (${String(e.message).split("\n")[0]}). Check the network connection and try again; STL and GLB files work without it.`);
+  }
+  const got = installedIntegrity(home);
+  if (got !== ENGINE_INTEGRITY || !existsSync(engineEntry(home))) {
+    rmSync(path.join(home, "node_modules"), { recursive: true, force: true });
+    rmSync(path.join(home, "package-lock.json"), { force: true });
+    fail(`Integrity check failed for ${ENGINE_PKG} ${ENGINE_VERSION}: expected ${ENGINE_INTEGRITY}, got ${got || "nothing"}. The download was removed.`);
+  }
+  return { report: { ...report, status: "installed" }, text: `OpenSCAD engine installed and verified: ${ENGINE_PKG} ${ENGINE_VERSION} (SHA-512 matches) in ${home}` };
 }
 
 async function compileScad(file, defines, lenient = false) {
@@ -1175,6 +1208,7 @@ function cmdParams(file) {
 async function main() {
   const { cmd, files, o } = parseArgs(process.argv.slice(2));
   if (cmd === "help") { console.log(HELP); return; }
+  if (cmd === "setup") { const r = cmdSetup(); if (o.json) process.stdout.write(JSON.stringify(r.report, null, 2) + "\n"); else console.log(r.text); return; }
   if (!files.length) fail(`${cmd} needs a model file. Run with --help.`);
   o.color = o.color || "#a7b0b8";
   hex(o.color);

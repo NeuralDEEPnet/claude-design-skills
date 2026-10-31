@@ -63,7 +63,8 @@ def main() -> None:
 # 3DJ Studio (plugins/3dj-studio) is a separate Claude Code plugin; the app skill
 # carries its skills as references and its free bench as a script.
 TDJ = ROOT / "plugins" / "3dj-studio" / "skills"
-TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-concept": "concept.md", "3dj-print": "print.md"}
+TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-print": "print.md"}
+TDJ_CONCEPT = ROOT / "plugins" / "3dj-concept" / "skills" / "3dj-concept" / "SKILL.md"
 TDJ_REFS = ["tools.md", "openscad.md", "brep-cad.md", "dfam.md", "form-cookbook.md"]
 
 
@@ -76,6 +77,9 @@ def relink_3dj(text: str) -> str:
         "For Standard or Full depth, follow `references/core-process.md` and `references/3d-object-design.md` with "
         "`references/templates.md`; this file covers the modelling, comparison and print stages.")
     text = text.replace("The bench lives in the sibling 3dj-make skill. ", "")
+    text = text.replace("If the 3dj-make skill (3DJ Studio plugin) is available and the file can be downloaded into the workspace, look at it on its bench: `node <3dj-make folder>/scripts/bench.mjs build",
+                        "If the file can be downloaded into the workspace, look at it on the bench: `node scripts/bench.mjs build")
+    text = text.replace(" if it is installed", "").replace(" if 3DJ Studio is installed", "")
     text = text.replace("`scripts/bench.mjs` in this skill's folder", "`scripts/bench.mjs` in the design-studio skill folder")
     text = text.replace("`../3dj-make/scripts/bench.mjs` resolved from this skill's folder", "`scripts/bench.mjs` in the design-studio skill folder")
     text = text.replace("../3dj-make/scripts/bench.mjs", "scripts/bench.mjs")
@@ -94,6 +98,8 @@ def build_3dj() -> None:
     for skill, ref in TDJ_SKILLS.items():
         src = (TDJ / skill / "SKILL.md").read_text()
         (OUT / "references" / "3dj" / ref).write_text(relink_3dj(body(src)))
+    if TDJ_CONCEPT.exists():
+        (OUT / "references" / "3dj" / "concept.md").write_text(relink_3dj(body(TDJ_CONCEPT.read_text())))
     for ref in TDJ_REFS:
         src = (TDJ / "3dj-make" / "references" / ref).read_text()
         (OUT / "references" / "3dj" / ref).write_text(relink_3dj(src))

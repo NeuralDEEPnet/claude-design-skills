@@ -1,0 +1,16 @@
+{
+  "name": "3dj-concept",
+  "displayName": "3DJ Concept",
+  "version": "0.1.0",
+  "description": "Text- and image-to-3D concept meshes with 3DJ: start the job, follow it to completion, and open the result in the 3DJ workbench. Companion to 3DJ Studio.",
+  "author": {
+    "name": "Neural Deep Network Ltd",
+    "email": "3d@neuraldeep.net",
+    "url": "https://www.3dj.app"
+  },
+  "homepage": "https://www.3dj.app",
+  "repository": "https://github.com/NeuralDEEPnet/claude-design-skills",
+  "license": "MIT",
+  "keywords": ["3d", "text-to-3d", "image-to-3d", "concept", "design-studio"],
+  "privacyPolicyUrl": "https://www.3dj.app/privacy"
+}

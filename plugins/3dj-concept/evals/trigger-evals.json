@@ -1,0 +1,6 @@
+[
+ {"query": "turn this photo of my cat into a 3d model https://example.com/cat.jpg", "skill": "3dj-concept", "should_trigger": true},
+ {"query": "make a 3D dragon figurine from a text prompt", "skill": "3dj-concept", "should_trigger": true},
+ {"query": "make a bracket 40 mm wide with two M3 holes", "skill": "3dj-concept", "should_trigger": false},
+ {"query": "design a wall bracket for a 25mm pipe", "skill": "3dj-concept", "should_trigger": false}
+]

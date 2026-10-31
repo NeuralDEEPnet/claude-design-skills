@@ -2,13 +2,14 @@
 
 ## v0.3.0 — 3DJ Studio — 2026-10-31
 
-- **New plugin `3dj-studio`** (`plugins/3dj-studio/`, marketplace entry `3dj-studio@neuraldeep`): the Design Studio's CAD bench.
+- **New plugins `3dj-studio` and `3dj-concept`** (`plugins/`, marketplace entries `3dj-studio@neuraldeep`, `3dj-concept@neuraldeep`): the Design Studio's CAD bench, and generated concept meshes kept in their own plugin so the directory submission stays clear of the AI-media-generation rule.
   - Connects the 3DJ MCP server (18 tools; public starters, validation and evidence schema work without an account).
-  - Skills: `3dj-make` (functional printable parts), `3dj-design` (three modelled directions compared at one scale, critique, development), `3dj-concept` (text/image-to-3D on 3DJ), `3dj-print` (print-readiness, orientation, operator quotes — review only).
+  - Skills: `3dj-make` (functional printable parts), `3dj-design` (three modelled directions compared at one scale, critique, development), `3dj-print` (print-readiness, orientation, operator quotes — review only); `3dj-concept` (text/image-to-3D on 3DJ) in the 3DJ Concept plugin.
   - Agent: `3dj-critic`, an independent review of rendered models against brief and DNA.
-  - **Free local bench** (`skills/3dj-make/scripts/bench.mjs`, MIT, Node 18+ only): compiles OpenSCAD 2025.01 (WebAssembly, Manifold backend, installed on first use), reads STL and GLB, measures size, mass, bodies, watertightness, wall thickness by ray probes, overhang regions and bed fit against the 3DJ Design Evidence Pack v1 gates, and renders views, colour-coded print checks, orientation studies and same-scale concept or parameter-variant comparisons. Stops on OpenSCAD errors and on warnings that silently change geometry.
+  - **Free local bench** (`skills/3dj-make/scripts/bench.mjs`, MIT, Node 18+ only): compiles OpenSCAD 2025.01 (WebAssembly, Manifold backend; `bench.mjs setup` downloads the engine once, pinned and SHA-512 verified, install scripts disabled), reads STL and GLB, measures size, mass, bodies, watertightness, wall thickness by ray probes, overhang regions and bed fit against the 3DJ Design Evidence Pack v1 gates, and renders views, colour-coded print checks, orientation studies and same-scale concept or parameter-variant comparisons. Stops on OpenSCAD errors and on warnings that silently change geometry.
   - Form cookbook: 13 tested OpenSCAD patterns (soft block, pebble, shell, chamfered block, lathe, twist, flutes, slot grille, hex lattice, lid lip, snap hook, screw holes and inserts, faceted).
-  - Evals: two graded cases and trigger queries in `plugins/3dj-studio/evals/`.
+  - README discloses everything the plugin runs, sends and fetches; LICENSE in each plugin folder; passes `claude plugin validate --profile directory --strict`.
+  - Evals: two graded cases and trigger queries in `plugins/3dj-studio/evals/`; concept triggers in `plugins/3dj-concept/evals/`.
 - `3d-object-design` hands its modelling stages to 3DJ Studio when installed (generic tools still listed).
 - App skill: `dist/design-studio` now bundles the 3DJ references and the bench (`references/3dj/`, `scripts/bench.mjs`), built from the plugin sources.
 

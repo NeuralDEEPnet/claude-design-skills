@@ -1,6 +1,6 @@
 ---
 name: 3dj-make
-description: Make a functional, 3D-printable part with 3DJ — brackets, mounts, enclosures, cases, holders, stands, adapters, knobs, organisers, jigs and replacement parts. Writes a parametric model, compiles and measures it (free on a local bench, or on 3DJ), looks at real rendered views and a print check, fixes problems, and hands over the files with named knobs to adjust. Use for "make me a bracket for…", "design a case for this PCB", "I need a replacement knob, 22 mm shaft", "model a phone stand I can print", "turn these measurements into a part", or any printable object with real dimensions. For a product designed through compared concepts use 3dj-design; for organic or sculptural meshes from a prompt or photo use 3dj-concept.
+description: Make a functional, 3D-printable part with 3DJ — brackets, mounts, enclosures, cases, holders, stands, adapters, knobs, organisers, jigs and replacement parts. Writes a parametric model, compiles and measures it (free on a local bench, or on 3DJ), looks at real rendered views and a print check, fixes problems, and hands over the files with named knobs to adjust. Use for "make me a bracket for…", "design a case for this PCB", "I need a replacement knob, 22 mm shaft", "model a phone stand I can print", "turn these measurements into a part", or any printable object with real dimensions. For a product designed through compared concepts use 3dj-design.
 ---
 
 # 3DJ Make — a printable part, measured and seen
@@ -9,7 +9,8 @@ Go from request to a parametric part the person can see, adjust by name and prin
 
 ## 0 · Know the bench (check silently)
 
-- **Local bench** — `scripts/bench.mjs` in this skill's folder; below, `BENCH` means its absolute path (write the full path into every command). Needs Node 18+, no account, no cost: compiles OpenSCAD with the official WebAssembly build, measures against the 3DJ gates, renders views and a print check. The first run installs the engine (about 11 MB) into `~/.cache/3dj-bench`. `node BENCH --help` lists every option.
+- **Local bench** — `scripts/bench.mjs` in this skill's folder; below, `BENCH` means its absolute path (write the full path into every command). Needs Node 18+, no account, no cost: compiles OpenSCAD with the official WebAssembly build, measures against the 3DJ gates, renders views and a print check. `node BENCH --help` lists every option.
+- **First `.scad` build**: the bench needs the OpenSCAD engine, a one-time download of about 11 MB from the npm registry (pinned version, SHA-512 verified, install scripts disabled) into `~/.cache/3dj-bench`. If the bench reports it is not installed, tell the person what will be downloaded and ask once; on a yes, run `node BENCH setup`. On a no, carry on with 3DJ's `openscad_compile_model` if they are signed in, or hand over uncompiled source. STL and GLB files never need the engine.
 - **3DJ tools** — free without sign-in: `openscad_get_starters`, `cad_get_starters`, `cad_validate_script`, `cad_get_evidence_schema`. With a 3DJ account: `openscad_compile_model` and the rest. Names, routes (plugin server, Claude app connector, Adaptive gateway) and sign-in: `references/tools.md`.
 - **Neither available** (no Node, no connector): write the source carefully, following `references/openscad.md`; say it has not been compiled and give the person the 3DJ workbench step.
 
@@ -26,7 +27,7 @@ Go from request to a parametric part the person can see, adjust by name and prin
 |---|---|
 | A printable part, quick iterations, STL | OpenSCAD + bench (default) |
 | STEP for other CAD or CNC, true edge fillets, mating assemblies with standard hardware | 3DJ B-Rep — follow `references/brep-cad.md` |
-| Organic, sculptural, character, "make this photo 3D" | the 3dj-concept skill |
+| Organic, sculptural, character, "make this photo 3D" | the 3dj-concept skill if it is installed; otherwise sculpt with the cookbook's pebble, lathe, twist and faceted patterns |
 
 ## 3 · Model it
 

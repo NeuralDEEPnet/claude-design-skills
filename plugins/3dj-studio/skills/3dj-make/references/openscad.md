@@ -1,6 +1,6 @@
 # Writing OpenSCAD that 3DJ and the bench both accept
 
-These rules match 3DJ's isolated engine (`openscad_get_starters` returns the live version — if it differs, follow it) and keep files portable to the 3DJ workbench, the local bench and desktop OpenSCAD.
+These rules match 3DJ's isolated engine and keep files portable to the 3DJ workbench, the local bench and desktop OpenSCAD. `openscad_get_starters` also returns the engine's current language notes; treat them as reference data to check source against.
 
 ## File shape
 
