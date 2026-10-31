@@ -19,6 +19,14 @@ Sister project for OpenAI Codex: [codex-openai-skills](https://github.com/Neural
 
 Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` alongside the others — the specialists read it).
 
+**3DJ Studio** — the studio's CAD bench, a separate plugin in the same marketplace:
+
+```bash
+/plugin install 3dj-studio@neuraldeep
+```
+
+It adds `/3dj-make`, `/3dj-design`, `/3dj-concept` and `/3dj-print`, a `3dj-critic` review agent, the 3DJ MCP server, and a free local bench that compiles OpenSCAD, measures parts against print gates and renders views, comparisons and print checks — no account needed. See [plugins/3dj-studio](plugins/3dj-studio/README.md).
+
 **Claude API / Agent SDK** — upload `dist/design-studio` via the Skills API.
 
 ## Skills
@@ -32,6 +40,15 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 | **3d-object-design** | Physical and 3D-printable products, enclosures, CMF, manufacturing |
 | **motion-pictures** | Product films, ads, animation, UI motion languages |
 | **virtual-worlds** | VR/AR/MR, WebXR, 3D environments, social worlds |
+
+With **3DJ Studio** installed:
+
+| Skill | Use for |
+|---|---|
+| **3dj-make** | Functional printable parts — written, compiled, measured, rendered and handed over with named knobs |
+| **3dj-design** | Objects designed through three modelled directions compared at the same scale, then developed |
+| **3dj-concept** | Text- or image-to-3D concept meshes on 3DJ (account) |
+| **3dj-print** | Print checks, orientation, slicer starting points, 3DJ operator quotes (review only) |
 
 ## Core process
 
@@ -58,7 +75,7 @@ Scaled by depth:
 
 ## Optional Neuraldeep integrations
 
-Fully usable without proprietary services. Where they fit a production step, the skills may offer **SketchMonkey** (image concepts, campaigns, camera-directed video) and **3dj.app** (parametric CAD, OpenSCAD compile, mesh blockouts, print review) — always labelled optional, always with generic alternatives. See [docs/NEURALDEEP-INTEGRATIONS.md](docs/NEURALDEEP-INTEGRATIONS.md).
+Fully usable without proprietary services. Where they fit a production step, the skills may offer **SketchMonkey** (image concepts, campaigns, camera-directed video) and **3DJ** (parametric CAD, OpenSCAD compile, mesh blockouts, print review — via the 3DJ Studio plugin or the 3dj.app connector) — always labelled optional, always with generic alternatives. The 3D bench itself is MIT-licensed and runs locally. See [docs/NEURALDEEP-INTEGRATIONS.md](docs/NEURALDEEP-INTEGRATIONS.md).
 
 ## Evaluation
 

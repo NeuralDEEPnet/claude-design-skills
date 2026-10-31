@@ -1,12 +1,21 @@
 {
   "name": "neuraldeep",
-  "owner": { "name": "Neural Deep Network Ltd", "email": "work@neuraldeep.net" },
+  "owner": {
+    "name": "Neural Deep Network Ltd",
+    "email": "work@neuraldeep.net"
+  },
   "plugins": [
     {
       "name": "neuraldeep-design-studio",
       "source": "./",
       "description": "Design-director, design-core, and five specialist design skills.",
-      "version": "0.2.0"
+      "version": "0.3.0"
+    },
+    {
+      "name": "3dj-studio",
+      "source": "./plugins/3dj-studio",
+      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts, concept meshes and print checks, with a free local compile, measure and preview bench.",
+      "version": "0.1.0"
     }
   ]
 }

@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.0 — 3DJ Studio — 2026-10-31
+
+- **New plugin `3dj-studio`** (`plugins/3dj-studio/`, marketplace entry `3dj-studio@neuraldeep`): the Design Studio's CAD bench.
+  - Connects the 3DJ MCP server (18 tools; public starters, validation and evidence schema work without an account).
+  - Skills: `3dj-make` (functional printable parts), `3dj-design` (three modelled directions compared at one scale, critique, development), `3dj-concept` (text/image-to-3D on 3DJ), `3dj-print` (print-readiness, orientation, operator quotes — review only).
+  - Agent: `3dj-critic`, an independent review of rendered models against brief and DNA.
+  - **Free local bench** (`skills/3dj-make/scripts/bench.mjs`, MIT, Node 18+ only): compiles OpenSCAD 2025.01 (WebAssembly, Manifold backend, installed on first use), reads STL and GLB, measures size, mass, bodies, watertightness, wall thickness by ray probes, overhang regions and bed fit against the 3DJ Design Evidence Pack v1 gates, and renders views, colour-coded print checks, orientation studies and same-scale concept or parameter-variant comparisons. Stops on OpenSCAD errors and on warnings that silently change geometry.
+  - Form cookbook: 13 tested OpenSCAD patterns (soft block, pebble, shell, chamfered block, lathe, twist, flutes, slot grille, hex lattice, lid lip, snap hook, screw holes and inserts, faceted).
+  - Evals: two graded cases and trigger queries in `plugins/3dj-studio/evals/`.
+- `3d-object-design` hands its modelling stages to 3DJ Studio when installed (generic tools still listed).
+- App skill: `dist/design-studio` now bundles the 3DJ references and the bench (`references/3dj/`, `scripts/bench.mjs`), built from the plugin sources.
+
 ## v0.2.0 — Claude edition — 2026-10-28
 
 - Packaged for Claude: Claude Code plugin (`.claude-plugin/plugin.json` + marketplace) with skills in `skills/`.

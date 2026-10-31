@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: pipe-bracket
+expected_outcome: |
+  A parametric OpenSCAD bracket compiled and checked on the bench against a 180 mm bed, reviewed from rendered views before presenting, delivered with knobs, print orientation and honest limits.

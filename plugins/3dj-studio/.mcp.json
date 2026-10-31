@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "3dj": {
+      "type": "http",
+      "url": "https://3dj-neuraldeepnet.on.adaptive.ai/api/mcp"
+    }
+  }
+}

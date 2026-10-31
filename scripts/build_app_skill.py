@@ -40,6 +40,9 @@ def relink(text: str) -> str:
     text = text.replace("../<skill-name>/SKILL.md", "<skill-name>.md")
     text = text.replace("the repository's `docs/NEURALDEEP-INTEGRATIONS.md`",
                         "the router SKILL.md (optional integrations)")
+    text = text.replace("If the **3DJ Studio** plugin is installed, hand the modelling stages to it:",
+                        "For the modelling stages, use the bundled 3D bench and 3DJ references:")
+    text = re.sub(r"`3dj-(make|design|concept|print)`", r"`references/3dj/\1.md`", text)
     return text
 
 
@@ -53,7 +56,48 @@ def main() -> None:
         (OUT / "references" / ref).write_text(relink(body(src)))
     shutil.copy(SKILLS / "design-core" / "references" / "templates.md",
                 OUT / "references" / "templates.md")
+    build_3dj()
     print(f"built {OUT}")
+
+
+# 3DJ Studio (plugins/3dj-studio) is a separate Claude Code plugin; the app skill
+# carries its skills as references and its free bench as a script.
+TDJ = ROOT / "plugins" / "3dj-studio" / "skills"
+TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-concept": "concept.md", "3dj-print": "print.md"}
+TDJ_REFS = ["tools.md", "openscad.md", "brep-cad.md", "dfam.md", "form-cookbook.md"]
+
+
+def relink_3dj(text: str) -> str:
+    """Rewrite plugin-relative paths and skill names to paths inside the app skill."""
+    text = text.replace(
+        "If the Neuraldeep Design Studio skills are installed (`3d-object-design`, `design-core`, `design-director`), "
+        "follow their process, templates and depth modes and use this skill for the modelling, comparison and print stages. "
+        "Otherwise follow the compact flow below.",
+        "For Standard or Full depth, follow `references/core-process.md` and `references/3d-object-design.md` with "
+        "`references/templates.md`; this file covers the modelling, comparison and print stages.")
+    text = text.replace("The bench lives in the sibling 3dj-make skill. ", "")
+    text = text.replace("`scripts/bench.mjs` in this skill's folder", "`scripts/bench.mjs` in the design-studio skill folder")
+    text = text.replace("`../3dj-make/scripts/bench.mjs` resolved from this skill's folder", "`scripts/bench.mjs` in the design-studio skill folder")
+    text = text.replace("../3dj-make/scripts/bench.mjs", "scripts/bench.mjs")
+    text = text.replace("../3dj-make/references/", "references/3dj/")
+    text = re.sub(r"(?<![/\w])references/(tools|openscad|brep-cad|dfam|form-cookbook)\.md", r"references/3dj/\1.md", text)
+    text = re.sub(r"`3dj-(make|design|concept|print)`", r"`references/3dj/\1.md`", text)
+    text = re.sub(r"(?<![`/\w-])(?:the )?(?:sibling )?3dj-(make|design|concept|print)(?: skill)?\b", r"`references/3dj/\1.md`", text)
+    return text
+
+
+def build_3dj() -> None:
+    if not TDJ.exists():
+        return
+    (OUT / "references" / "3dj").mkdir(parents=True, exist_ok=True)
+    (OUT / "scripts").mkdir(exist_ok=True)
+    for skill, ref in TDJ_SKILLS.items():
+        src = (TDJ / skill / "SKILL.md").read_text()
+        (OUT / "references" / "3dj" / ref).write_text(relink_3dj(body(src)))
+    for ref in TDJ_REFS:
+        src = (TDJ / "3dj-make" / "references" / ref).read_text()
+        (OUT / "references" / "3dj" / ref).write_text(relink_3dj(src))
+    shutil.copy(TDJ / "3dj-make" / "scripts" / "bench.mjs", OUT / "scripts" / "bench.mjs")
 
 
 if __name__ == "__main__":

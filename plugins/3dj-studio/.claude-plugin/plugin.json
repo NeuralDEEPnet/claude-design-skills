@@ -1,0 +1,25 @@
+{
+  "name": "3dj-studio",
+  "version": "0.1.0",
+  "description": "3DJ as the live CAD bench of the Neuraldeep Design Studio: make printable parts, design objects through compared concepts, generate concept meshes, and get parts print-ready — with a free local compile, measure and preview bench.",
+  "author": {
+    "name": "Neural Deep Network Ltd",
+    "email": "3d@neuraldeep.net",
+    "url": "https://www.3dj.app"
+  },
+  "homepage": "https://www.3dj.app",
+  "repository": "https://github.com/NeuralDEEPnet/claude-design-skills",
+  "license": "MIT",
+  "keywords": [
+    "3d-printing",
+    "cad",
+    "openscad",
+    "parametric",
+    "industrial-design",
+    "dfam",
+    "stl",
+    "step",
+    "design-studio"
+  ],
+  "privacyPolicyUrl": "https://www.3dj.app/privacy"
+}
