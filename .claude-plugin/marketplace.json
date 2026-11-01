@@ -21,7 +21,7 @@
         "repo": "NeuralDEEPnet/3dj-claude-plugin"
       },
       "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts, text- and image-to-3D, and print checks, with a free local compile, measure and preview bench.",
-      "version": "0.3.1"
+      "version": "0.3.2"
     }
   ]
 }
