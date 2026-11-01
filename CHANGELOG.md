@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — 2026-11-01
+
+- 3DJ Concept folded into 3DJ Studio 0.3.0: `/3dj-concept` (text- and image-to-3D) now ships in the `3dj-studio` plugin, and the separate `3dj-concept` marketplace entry and `plugins/3dj-concept/` are removed. The app skill builds `references/3dj/concept.md` from the 3DJ Studio checkout.
+
 ## v0.3.0 — 3DJ Studio — 2026-10-31
 
 - **New plugins `3dj-studio` and `3dj-concept`** (marketplace entries `3dj-studio@neuraldeep`, `3dj-concept@neuraldeep`; 3DJ Studio lives in [NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin), 3DJ Concept in `plugins/3dj-concept/`): the Design Studio's CAD bench, and generated concept meshes kept in their own plugin so the directory submission stays clear of the AI-media-generation rule.

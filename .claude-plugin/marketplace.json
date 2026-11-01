@@ -20,14 +20,8 @@
         "source": "github",
         "repo": "NeuralDEEPnet/3dj-claude-plugin"
       },
-      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts and print checks, with a free local compile, measure and preview bench.",
-      "version": "0.2.2"
-    },
-    {
-      "name": "3dj-concept",
-      "source": "./plugins/3dj-concept",
-      "description": "Text- and image-to-3D concept meshes with 3DJ. Companion to 3DJ Studio.",
-      "version": "0.1.0"
+      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts, text- and image-to-3D, and print checks, with a free local compile, measure and preview bench.",
+      "version": "0.3.0"
     }
   ]
 }

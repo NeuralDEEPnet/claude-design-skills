@@ -65,8 +65,7 @@ def main() -> None:
 # its skills as references and its free bench as a script, read from a checkout next to this
 # repository or from THREEDJ_PLUGIN_DIR. Without one, the app skill is built without them.
 TDJ = Path(os.environ.get("THREEDJ_PLUGIN_DIR", ROOT.parent / "3dj-claude-plugin")) / "skills"
-TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-print": "print.md"}
-TDJ_CONCEPT = ROOT / "plugins" / "3dj-concept" / "skills" / "3dj-concept" / "SKILL.md"
+TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-print": "print.md", "3dj-concept": "concept.md"}
 TDJ_REFS = ["tools.md", "openscad.md", "brep-cad.md", "dfam.md", "form-cookbook.md"]
 
 
@@ -87,6 +86,7 @@ def relink_3dj(text: str) -> str:
     text = text.replace("../3dj-make/scripts/bench.mjs", "scripts/bench.mjs")
     text = text.replace("../3dj-make/references/", "references/3dj/")
     text = re.sub(r"(?<![/\w])references/(tools|openscad|brep-cad|dfam|form-cookbook)\.md", r"references/3dj/\1.md", text)
+    text = text.replace("from this plugin's `3dj` server, ", "")
     text = re.sub(r"`3dj-(make|design|concept|print)`", r"`references/3dj/\1.md`", text)
     text = re.sub(r"(?<![`/\w-])(?:the )?(?:sibling )?3dj-(make|design|concept|print)(?: skill)?\b", r"`references/3dj/\1.md`", text)
     return text
@@ -102,8 +102,6 @@ def build_3dj() -> None:
     for skill, ref in TDJ_SKILLS.items():
         src = (TDJ / skill / "SKILL.md").read_text()
         (OUT / "references" / "3dj" / ref).write_text(relink_3dj(body(src)))
-    if TDJ_CONCEPT.exists():
-        (OUT / "references" / "3dj" / "concept.md").write_text(relink_3dj(body(TDJ_CONCEPT.read_text())))
     for ref in TDJ_REFS:
         src = (TDJ / "3dj-make" / "references" / ref).read_text()
         (OUT / "references" / "3dj" / ref).write_text(relink_3dj(src))
