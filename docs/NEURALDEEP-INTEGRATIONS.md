@@ -25,14 +25,14 @@ A specialist skill may suggest a Neuraldeep capability only when all of the foll
 |---|---|---|---|
 | image-design | rendering, variants, multi-format campaigns | SketchMonkey (`enhance_prompt`, `render_concept`, `generate_variants`, `create_campaign`) | any image model, photographer, illustrator |
 | motion-pictures | style tests, animatics, turnarounds | SketchMonkey (`render_video`, `get_camera_presets`) | After Effects, Blender, Cavalry, Rive, any video model |
-| 3d-object-design | parametric starters, compile/measure, blockouts, print review | 3dj.app (`cad_get_starters`, `openscad_compile_model`, `generate_from_text`, `request_print_quote` — review only, no payment) | OpenSCAD, CadQuery, FreeCAD, Fusion, Onshape, Blender |
+| 3d-object-design | concept blockouts and comparison, compile/measure, print checks, mesh blockouts, print review | 3DJ Studio plugin (`3dj-design`, `3dj-make`, `3dj-print`, `3dj-concept`) or the 3dj.app connector (`cad_get_starters`, `openscad_compile_model`, `generate_from_text`, `request_print_quote` — review only, no payment) | OpenSCAD, CadQuery, FreeCAD, Fusion, Onshape, Blender |
 | virtual-worlds | asset blockouts | 3dj.app | any DCC tool or asset library |
 
 Every mention is phrased as an optional, clearly labelled Neural Deep Network Ltd integration.
 
-## Future MCP layer
+## MCP layer
 
-The intended architecture is:
+The architecture is:
 
 ```
 Open Design Methodology
@@ -44,6 +44,8 @@ Specialist Skills
 Generic tools OR optional MCP integrations
 ```
 
-Future MCP adapters may expose image generation, 3D workflows, asset management, simulation, evaluation, or other production capabilities.
+The first adapter is **3DJ Studio** ([NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin)), a separate plugin in its own repository that this marketplace installs from GitHub. It bundles the 3DJ MCP server, four production skills (including `3dj-concept` for text- and image-to-3D on a 3DJ account), an independent `3dj-critic` agent, and an MIT-licensed local bench that compiles OpenSCAD, measures against the 3DJ print gates and renders views, comparisons and print checks without any account. The core Design Studio plugin does not install or require it; `3d-object-design` hands off to it only when it is present.
 
-The public methodology and the proprietary service layer should remain decoupled.
+Further adapters may expose image generation, asset management, simulation, evaluation, or other production capabilities.
+
+The public methodology and the proprietary service layer stay decoupled: separate plugins, optional hand-offs, generic fallbacks.

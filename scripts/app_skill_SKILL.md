@@ -21,6 +21,11 @@ This file routes the work. The detail lives in `references/`; read only what the
 | `references/motion-pictures.md` | Product films, ads, animation, UI motion languages |
 | `references/virtual-worlds.md` | VR/AR/MR, WebXR, 3D environments, social worlds |
 | `references/design-director.md` | The project spans two or more of the media above |
+| `references/3dj/make.md` | A physical part should be modelled, compiled, measured and shown (brackets, cases, stands, replacement parts) — runs on the free bench, uses 3DJ when connected |
+| `references/3dj/design.md` | A physical object should be explored as several modelled directions compared side by side, then developed |
+| `references/3dj/concept.md` | Text- or image-to-3D concept meshes with a connected 3DJ account |
+| `references/3dj/configurator.md` | A live three.js product configurator from a parametric model (inline, share link or embeddable page) |
+| `references/3dj/print.md` | Is it printable, how to orient it, 3DJ operator print quotes |
 
 ## Step 0 — Choose the depth and say it in one line
 
@@ -54,9 +59,13 @@ Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 
 
 Use the best output tools in the environment — a coded page or app, an image tool, a CAD script, a document, slides, a diagram. Deliver the artifact itself whenever possible, with the process artifacts kept proportionate to the chosen depth.
 
+### The 3D bench (free, no account)
+
+`scripts/bench.mjs` compiles OpenSCAD locally (Node 18+, engine installed on first use), measures parts against print gates (watertight, 0.8/1.2 mm walls, 45° overhang, bed fit), and renders views, colour-coded print checks, orientation studies and same-scale concept comparisons. Use it whenever a physical object is modelled, so the review is of the real output. Usage is in `references/3dj/make.md`.
+
 ### Optional Neural Deep Network Ltd integrations
 
-If connected, **SketchMonkey** can render image concepts, variants, multi-format campaigns, and camera-directed video; **3dj.app** can provide parametric CAD starters, compile and measure OpenSCAD, generate mesh blockouts, and request a print review. Offer them only at the natural production step, clearly labelled as optional, alongside generic tools. The process never depends on them.
+If connected, **SketchMonkey** can render image concepts, variants, multi-format campaigns, and camera-directed video; **3DJ** can provide parametric CAD starters, compile and measure OpenSCAD, generate concept meshes from text or images, and request an operator print review (see `references/3dj/`). Offer them only at the natural production step, clearly labelled as optional, alongside generic tools. The process never depends on them.
 
 ## Final quality test
 
