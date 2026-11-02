@@ -25,7 +25,7 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 /plugin install 3dj-studio@neuraldeep
 ```
 
-3DJ Studio adds `/3dj-make`, `/3dj-design`, `/3dj-print` and `/3dj-concept` (text- or image-to-3D on a 3DJ account), a `3dj-critic` review agent, the 3DJ MCP server, and a free local bench that compiles OpenSCAD, measures parts against print gates and renders views, comparisons and print checks — no account needed. 3DJ Studio lives in its own repository, [NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin), and this marketplace installs it from there.
+3DJ Studio adds `/3dj-make`, `/3dj-design`, `/3dj-print`, `/3dj-configurator` (live three.js configurators) and `/3dj-concept` (text- or image-to-3D on a 3DJ account), a `3dj-critic` review agent, the 3DJ MCP server, and a free local bench that compiles OpenSCAD, measures parts against print gates and renders views, comparisons and print checks — no account needed. 3DJ Studio lives in its own repository, [NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin), and this marketplace installs it from there.
 
 **Claude API / Agent SDK** — upload `dist/design-studio` via the Skills API.
 

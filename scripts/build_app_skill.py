@@ -43,7 +43,7 @@ def relink(text: str) -> str:
                         "the router SKILL.md (optional integrations)")
     text = text.replace("If the **3DJ Studio** plugin is installed, hand the modelling stages to it:",
                         "For the modelling stages, use the bundled 3D bench and 3DJ references:")
-    text = re.sub(r"`3dj-(make|design|concept|print)`", r"`references/3dj/\1.md`", text)
+    text = re.sub(r"`3dj-(make|design|concept|print|configurator)`", r"`references/3dj/\1.md`", text)
     return text
 
 
@@ -65,7 +65,7 @@ def main() -> None:
 # its skills as references and its free bench as a script, read from a checkout next to this
 # repository or from THREEDJ_PLUGIN_DIR. Without one, the app skill is built without them.
 TDJ = Path(os.environ.get("THREEDJ_PLUGIN_DIR", ROOT.parent / "3dj-claude-plugin")) / "skills"
-TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-print": "print.md", "3dj-concept": "concept.md"}
+TDJ_SKILLS = {"3dj-make": "make.md", "3dj-design": "design.md", "3dj-print": "print.md", "3dj-concept": "concept.md", "3dj-configurator": "configurator.md"}
 TDJ_REFS = ["tools.md", "openscad.md", "brep-cad.md", "dfam.md", "form-cookbook.md"]
 
 
@@ -87,8 +87,8 @@ def relink_3dj(text: str) -> str:
     text = text.replace("../3dj-make/references/", "references/3dj/")
     text = re.sub(r"(?<![/\w])references/(tools|openscad|brep-cad|dfam|form-cookbook)\.md", r"references/3dj/\1.md", text)
     text = text.replace("from this plugin's `3dj` server, ", "")
-    text = re.sub(r"`3dj-(make|design|concept|print)`", r"`references/3dj/\1.md`", text)
-    text = re.sub(r"(?<![`/\w-])(?:the )?(?:sibling )?3dj-(make|design|concept|print)(?: skill)?\b", r"`references/3dj/\1.md`", text)
+    text = re.sub(r"`3dj-(make|design|concept|print|configurator)`", r"`references/3dj/\1.md`", text)
+    text = re.sub(r"(?<![`/\w-])(?:the )?(?:sibling )?3dj-(make|design|concept|print|configurator)(?: skill)?\b", r"`references/3dj/\1.md`", text)
     return text
 
 

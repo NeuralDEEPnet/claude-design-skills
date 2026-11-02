@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased — 2026-11-01
+## Unreleased — 2026-11-02
+
+- 3DJ Studio 0.4.0 adds `/3dj-configurator` (live three.js product configurators); the app skill bundles it as `references/3dj/configurator.md`.
 
 - 3DJ Concept folded into 3DJ Studio 0.3.0: `/3dj-concept` (text- and image-to-3D) now ships in the `3dj-studio` plugin, and the separate `3dj-concept` marketplace entry and `plugins/3dj-concept/` are removed. The app skill builds `references/3dj/concept.md` from the 3DJ Studio checkout.
 

@@ -24,6 +24,7 @@ This file routes the work. The detail lives in `references/`; read only what the
 | `references/3dj/make.md` | A physical part should be modelled, compiled, measured and shown (brackets, cases, stands, replacement parts) — runs on the free bench, uses 3DJ when connected |
 | `references/3dj/design.md` | A physical object should be explored as several modelled directions compared side by side, then developed |
 | `references/3dj/concept.md` | Text- or image-to-3D concept meshes with a connected 3DJ account |
+| `references/3dj/configurator.md` | A live three.js product configurator from a parametric model (inline, share link or embeddable page) |
 | `references/3dj/print.md` | Is it printable, how to orient it, 3DJ operator print quotes |
 
 ## Step 0 — Choose the depth and say it in one line
