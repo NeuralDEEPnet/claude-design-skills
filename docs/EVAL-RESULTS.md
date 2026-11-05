@@ -1,8 +1,17 @@
 # Eval results
 
-## v0.4.0 — 2026-11-05
+## v0.4.0 — lean-unbranded-landing — 2026-11-05
 
-Not yet run against a model. `evals/cases/lean-unbranded-landing` (9 assertions) and tasks lean-01…04 were added with the house style; structural validation (`claude plugin validate --profile directory --strict`, app-skill build) passed. Run the case with and without the skill before describing the house style as behaviourally validated.
+Executor: Claude Sonnet 5.5 via `claude plugin eval` (with/without ablation, 3 runs per arm, 3 judge votes per assertion, Bash withheld because the host could not sandbox it). Directional only.
+
+| Arm | Run 1 | Run 2 | Run 3 | Mean |
+|---|---|---|---|---|
+| with plugin | 5/9 | 4/9 | **8/9** | 0.63 |
+| without | 3/9 | 3/9 | 4/9 | 0.37 |
+
+Δ +0.26 over 6 runs. Runs 1–2 with the plugin ran on the house style *before* the Rapid response shape existed: both kept the artifact and the one-accent/one-family rule but dropped the depth line, the anti-principles and the contrast numbers. Run 3 ran after the response shape was added and passed every assertion except the word count, where two of three judges failed a 359-word response (under the 400 limit; the grader now says to exclude the written file). The baseline never stated a depth, never listed anti-principles, and said "readable contrast" without numbers.
+
+A clean rerun on the final text is recorded below when available.
 
 ## v0.2 vs v0.1 — 2026-10-28
 
