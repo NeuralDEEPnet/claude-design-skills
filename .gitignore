@@ -1,3 +1,4 @@
 dist/design-studio/
 __pycache__/
 .DS_Store
+evals/results/
