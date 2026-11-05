@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.4.0 — Lean and clean — 2026-11-05
+
+- **House style** (`design-core/references/house-style.md`): Neuraldeep's lean and clean philosophy as two layers. *Lean delivery* always applies: answer first, artifacts not essays, one next step, response budgets per depth (Rapid ≤ 400 words, Standard ≤ 1,200 plus tables), subtract before you add, targeted revisions stay targeted. The *clean default character* applies only when a brief has no brand of its own: one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces; with anti-principles and a starter token set (light and dark, AA contrast computed) derived from neuraldeep.net. Evidence, owner intent, and inference are tagged separately; the repository stays style-agnostic for branded work.
+- **Reduction pass** in every specialist skill and in the director's cross-medium critique: remove what carries no information, structure, or affordance; collapse anything with more than three variants to one.
+- **software-design**: lean system defaults (one accent, one scale, one radius, one elevation logic, light and dark from the same tokens), a copy section (fragment headlines, verb buttons, ~20-word sentences), dark-theme render check.
+- **3d-object-design**: production evidence section (renders vs CAD vs meshes vs tested parts, fit coupons, tessellation by tolerance, envelope fit, assembly joints, honest labelling) ported from the Codex edition.
+- **design-core**: targeted-revision rule, learning capture (`references/learning-loop.md`), depth budgets, house-style hooks at Step 0, DNA, Refine, and Handoff.
+- **App skill** bundles `house-style.md` and `learning-loop.md`; router points to them.
+- **Evals**: graded case `lean-unbranded-landing` (9 checks), 8 new tasks (incl. the Codex edition's 3d-04/05 and core-03/04), 6 trigger queries.
+- **Plugin directory**: contributor guidance moved to `.claude/CLAUDE.md` so the plugin root passes `claude plugin validate --profile directory --strict`.
+- Marketplace: 3DJ Studio entry mirrors 0.4.1.
+
 ## Unreleased — 2026-11-02
 
 - 3DJ Studio 0.4.0 adds `/3dj-configurator` (live three.js product configurators); the app skill bundles it as `references/3dj/configurator.md`.

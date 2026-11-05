@@ -1,5 +1,9 @@
 # Eval results
 
+## v0.4.0 — 2026-11-05
+
+Not yet run against a model. `evals/cases/lean-unbranded-landing` (9 assertions) and tasks lean-01…04 were added with the house style; structural validation (`claude plugin validate --profile directory --strict`, app-skill build) passed. Run the case with and without the skill before describing the house style as behaviourally validated.
+
 ## v0.2 vs v0.1 — 2026-10-28
 
 Executor: Claude Sonnet subagents, one run per configuration. Grader: Claude Opus, assertions in `evals/cases/`. Directional only.

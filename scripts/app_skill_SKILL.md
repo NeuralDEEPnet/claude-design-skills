@@ -15,6 +15,8 @@ This file routes the work. The detail lives in `references/`; read only what the
 |---|---|
 | `references/core-process.md` | Always, for Standard or Full depth — the 13-stage studio process |
 | `references/templates.md` | When writing any studio artifact (brief, user panel, DNA, concept cards, critique, handoff) |
+| `references/house-style.md` | Always, at Step 0 — lean delivery rules and response budgets; plus the clean default character and starter tokens when the brief has no brand of its own |
+| `references/learning-loop.md` | The user asks to improve these skills from a lesson learned |
 | `references/software-design.md` | Websites, apps, dashboards, design systems, coded UI |
 | `references/image-design.md` | Key art, posters, product images, prompts for image models, logos/identity |
 | `references/3d-object-design.md` | Physical products, enclosures, robots, 3D printing, packaging structure |
@@ -35,7 +37,7 @@ This file routes the work. The detail lives in `references/`; read only what the
 | **Standard** (default) | Most real design tasks | Every stage of the core process, each kept tight |
 | **Full** | New products, rebrands, multi-medium launches, expensive-to-reverse work | Every stage in depth, with research and validation plans |
 
-Even at Rapid, keep the design DNA and the real-output check: they catch most failures for almost no cost.
+Even at Rapid, keep the design DNA and the real-output check: they catch most failures for almost no cost. Keep the chat response inside the budget for the depth (Rapid ≤ 400 words, Standard ≤ 1,200 plus tables) and in the response shape from `references/house-style.md`: depth line first ("Rapid depth", and "starting from the clean default character" when unbranded), then the artifact, compact DNA with anti-principles, checks with numbers, assumptions, one next step. The artifact can be as large as it needs to be.
 
 ## Step 1 — Route
 
@@ -43,7 +45,7 @@ Pick one primary discipline and read its reference. Add secondary disciplines on
 
 ## The process in one breath
 
-Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 divergent concepts → Senior review (six lenses) → Synthesis → Cheapest prototype → Review the real output → Validate → Refine → Handoff.
+Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 divergent concepts → Senior review (six lenses) → Synthesis → Cheapest prototype → Review the real output → Validate → Refine (with the reduction pass) → Handoff.
 
 ## Rules that matter most
 
@@ -54,6 +56,8 @@ Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 
 - **Critics diagnose, they don't vote** — each lens says at least one uncomfortable thing.
 - **Review what people will experience** (the rendered page, the image at final size, the model from several views, the film at speed, the world at scale). If you can't render it, say so and give the checks.
 - **Accessibility, feasibility, and performance are design inputs**, with concrete thresholds in each discipline reference.
+- **Lean and clean.** Answer first, artifacts not essays, one next step. Subtract before you add. An unbranded brief starts from the clean default character (one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces) and says so; a branded brief never inherits it.
+- **Targeted revisions stay targeted.** A change to an approved design reuses its brief and DNA; implement, inspect, hand off.
 
 ## Producing the output
 
@@ -69,4 +73,4 @@ If connected, **SketchMonkey** can render image concepts, variants, multi-format
 
 ## Final quality test
 
-Did we solve the right problem? Can major decisions be traced to users, constraints, or DNA? Did we explore before converging? Did we critique a real artifact? Is it coherent, not merely attractive? What evidence would change our mind?
+Did we solve the right problem? Can major decisions be traced to users, constraints, or DNA? Did we explore before converging? Did we critique a real artifact? Is it coherent, not merely attractive? Did the reduction pass run? Is the response inside its budget? What evidence would change our mind?

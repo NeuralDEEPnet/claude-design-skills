@@ -2,7 +2,7 @@
 
 A professional, multidisciplinary design process for Claude, created and maintained by **Neural Deep Network Ltd**.
 
-It adapts an industrial-design studio process to software, images, 3D objects, motion pictures, and virtual worlds. The aim is not to make Claude decorate outputs, but to make it **design deliberately**: understand the brief, research users honestly, establish a design DNA, explore genuinely different directions, critique, prototype, review the real output, and refine.
+It adapts an industrial-design studio process to software, images, 3D objects, motion pictures, and virtual worlds. The aim is not to make Claude decorate outputs, but to make it **design deliberately**: understand the brief, research users honestly, establish a design DNA, explore genuinely different directions, critique, prototype, review the real output, and refine — and to deliver it **lean and clean**: answer first, artifacts not essays, subtract before you add.
 
 Sister project for OpenAI Codex: [codex-openai-skills](https://github.com/NeuralDEEPnet/codex-openai-skills).
 
@@ -34,7 +34,7 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 | Skill | Use for |
 |---|---|
 | **design-director** | Multi-medium projects — routes, sequences, keeps one design DNA |
-| **design-core** | The shared studio process, depth modes, and templates |
+| **design-core** | The shared studio process, depth modes, templates, and the lean-and-clean house style |
 | **software-design** | Websites, apps, dashboards, design systems, coded UI |
 | **image-design** | Key art, posters, product imagery, image-model prompts, identity marks |
 | **3d-object-design** | Physical and 3D-printable products, enclosures, CMF, manufacturing |
@@ -60,6 +60,13 @@ Scaled by depth:
 - **Standard** (default) — every stage, kept tight.
 - **Full** — new products, rebrands, multi-medium launches.
 
+## House style — lean and clean
+
+Two layers, different scope (`skills/design-core/references/house-style.md`):
+
+- **Lean delivery**, always: the artifact leads, rationale stays inside a budget for the depth, every handoff ends with one next step, and a reduction pass removes whatever carries no information, structure, or affordance.
+- **Clean default character**, only for briefs with no brand of their own: one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces. Starter tokens (light and dark, AA contrast) are derived from neuraldeep.net and labelled as a derivation. A branded brief never inherits it — the repository stays style-agnostic.
+
 ## Principles
 
 1. User evidence before aesthetics.
@@ -79,7 +86,7 @@ Fully usable without proprietary services. Where they fit a production step, the
 
 ## Evaluation
 
-`evals/` holds a prompt suite, graded cases in the `claude plugin eval` layout (`evals/cases/`), and trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md).
+`evals/` holds a prompt suite (26 tasks), four graded cases in the `claude plugin eval` layout (`evals/cases/`), and 20 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` has not yet been run against a model; see the same file.
 
 ```bash
 claude plugin eval skills/<skill-name>   # requires Claude Code
@@ -93,7 +100,7 @@ claude plugin eval skills/<skill-name>   # requires Claude Code
 python3 scripts/build_app_skill.py && (cd dist && rm -f design-studio.skill && zip -qr design-studio.skill design-studio)
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [CHANGELOG.md](CHANGELOG.md).
+Contributor guidance for agents lives in `.claude/CLAUDE.md` (kept out of the plugin root so the plugin passes `claude plugin validate --profile directory --strict`). See [CONTRIBUTING.md](CONTRIBUTING.md) and [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

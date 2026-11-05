@@ -37,6 +37,9 @@ def relink(text: str) -> str:
     """Rewrite sibling-skill paths to paths inside the bundled skill."""
     text = text.replace("../design-core/references/templates.md", "templates.md")
     text = text.replace("`references/templates.md`", "`templates.md`")
+    text = text.replace("../design-core/references/house-style.md", "house-style.md")
+    text = text.replace("`references/house-style.md`", "`house-style.md`")
+    text = text.replace("`references/learning-loop.md`", "`learning-loop.md`")
     text = text.replace("../design-core/SKILL.md", "core-process.md")
     text = text.replace("../<skill-name>/SKILL.md", "<skill-name>.md")
     text = text.replace("the repository's `docs/NEURALDEEP-INTEGRATIONS.md`",
@@ -55,8 +58,8 @@ def main() -> None:
     for skill, ref in REFS.items():
         src = (SKILLS / skill / "SKILL.md").read_text()
         (OUT / "references" / ref).write_text(relink(body(src)))
-    shutil.copy(SKILLS / "design-core" / "references" / "templates.md",
-                OUT / "references" / "templates.md")
+    for ref in ("templates.md", "house-style.md", "learning-loop.md"):
+        shutil.copy(SKILLS / "design-core" / "references" / ref, OUT / "references" / ref)
     build_3dj()
     print(f"built {OUT}")
 
