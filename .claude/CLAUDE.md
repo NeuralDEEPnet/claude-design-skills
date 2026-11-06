@@ -1,6 +1,6 @@
 # Repository guidance for agents
 
-This repository contains public design skills for Claude (Claude Code plugin + Claude app skill).
+This repository contains public design skills for Claude (Claude Code plugin + Claude app skill). This file lives in `.claude/` rather than the repository root so the plugin root passes `claude plugin validate --profile directory --strict`; keep it here.
 
 ## When changing a skill
 
@@ -19,6 +19,8 @@ This repository contains public design skills for Claude (Claude Code plugin + C
    - inspiration,
    - and agent inference.
 10. Keep specialist skills composable. Hybrid tasks should be coordinated through `design-director`.
+11. Keep the house style (`skills/design-core/references/house-style.md`) in two layers: lean delivery always; the clean default character only for unbranded briefs. Never let it override a client's own identity.
+12. Mirror substantive skill changes to the Codex edition (`NeuralDEEPnet/codex-openai-skills`, `.agents/skills/`), which shares the same skill bodies.
 
 ## Quality bar
 
@@ -33,5 +35,11 @@ python3 scripts/build_app_skill.py && (cd dist && rm -f design-studio.skill && z
 ```
 
 Edit `scripts/app_skill_SKILL.md` for the app skill's router. Skill names must not contain "claude" or "anthropic".
+
+Validate before release:
+
+```bash
+claude plugin validate --profile directory --strict .
+```
 
 The app skill also bundles 3DJ Studio's references and bench. They come from a checkout of `NeuralDEEPnet/3dj-claude-plugin` next to this repository (or `THREEDJ_PLUGIN_DIR`); 3DJ Studio itself is maintained in that repository, not here.
