@@ -12,7 +12,7 @@
 - **Plugin directory**: contributor guidance moved to `.claude/CLAUDE.md` so the plugin root passes `claude plugin validate --profile directory --strict`.
 - Marketplace: 3DJ Studio entry mirrors 0.4.1.
 
-## Unreleased — 2026-11-02
+## 3DJ Studio mirror — 2026-11-02 (shipped in v0.4.0)
 
 - 3DJ Studio 0.4.0 adds `/3dj-configurator` (live three.js product configurators); the app skill bundles it as `references/3dj/configurator.md`.
 

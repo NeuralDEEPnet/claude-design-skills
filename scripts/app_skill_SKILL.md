@@ -45,7 +45,7 @@ Pick one primary discipline and read its reference. Add secondary disciplines on
 
 ## The process in one breath
 
-Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 divergent concepts → Senior review (six lenses) → Synthesis → Cheapest prototype → Review the real output → Validate → Refine (with the reduction pass) → Handoff.
+Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 divergent concepts → Senior review (six lenses) → Synthesis → Cheapest prototype → Review the real output → Validate → Refine (with the reduction pass, measured against the project's DNA) → Handoff.
 
 ## Rules that matter most
 
