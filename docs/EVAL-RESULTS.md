@@ -11,7 +11,14 @@ Executor: Claude Sonnet 5.5 via `claude plugin eval` (with/without ablation, 3 r
 
 Δ +0.26 over 6 runs. Runs 1–2 with the plugin ran on the house style *before* the Rapid response shape existed: both kept the artifact and the one-accent/one-family rule but dropped the depth line, the anti-principles and the contrast numbers. Run 3 ran after the response shape was added and passed every assertion except the word count, where two of three judges failed a 359-word response (under the 400 limit; the grader now says to exclude the written file). The baseline never stated a depth, never listed anti-principles, and said "readable contrast" without numbers.
 
-A clean rerun on the final text is recorded below when available.
+**Clean rerun on the final text** (same setup, 6 runs):
+
+| Arm | Run 1 | Run 2 | Run 3 | Mean |
+|---|---|---|---|---|
+| with plugin | 7/9 | 5/9 | 7/9 | 0.70 |
+| without | 3/9 | 3/9 | 3/9 | 0.33 |
+
+Δ +0.37. Runs 1 and 3 followed the Rapid response shape exactly (depth line, artifact, DNA with anti-principles, contrast numbers, honest render statement) at 349 and 350 words, yet all three judges failed the "under 400 words" assertion both times; the judges cannot count reliably, so that grader is now a qualitative compactness check (`07-response-is-compact`). Run 2 did not state the depth, the DNA or the contrast numbers, which looks like the skill not being read on that run; treat 1-in-3 as the current trigger variance on Sonnet. The baseline was stable at 3/9: one file, one accent, short response, and none of the design discipline.
 
 ## v0.2 vs v0.1 — 2026-10-28
 
