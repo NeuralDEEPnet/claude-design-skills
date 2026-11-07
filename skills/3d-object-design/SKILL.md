@@ -50,9 +50,9 @@ If the **3DJ Studio** plugin is installed, hand the modelling stages to it: `3dj
 
 **Reveal** (lid, drawer, deployable part): default none. If a named user task needs one, specify the states (closed, moving, open, blocked, power lost), the obstruction response, the manual fallback and the off-state silhouette. A hidden primary control fails.
 
-**Repair:** list parts, fasteners, procedure and availability period as evidence, or write "unknown".
+**Repair:** At Standard/Full, or when a reveal or tradition is in the brief: list parts, fasteners, procedure and availability period as evidence, or write "unknown".
 
-**Provenance:** body-contact dimensions carry quantity, source and tolerance; part and housing families use one declared series (`../design-core/references/proportion.md`).
+**Provenance:** At Standard/Full, or when a reveal or tradition is in the brief: body-contact dimensions carry quantity, source and tolerance; part and housing families use one declared series (`../design-core/references/proportion.md`).
 
 ## Reduction pass
 

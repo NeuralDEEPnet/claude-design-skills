@@ -115,7 +115,7 @@ The studio has a house style with two layers (`skills/design-core/references/hou
 
 ## Heritage layer
 
-Design heritage is an opt-in lens in design-core (`references/heritage.md`, `heritage-ledger.md`, `proportion.md`, `modern-platform.md`), not a discipline and not a style. A gate opens it only when a brief names a tradition, school, designer, company, typeface or award, or asks for an award-readiness review; at Rapid it costs at most one strand line. When open, each reference becomes a DNA principle with a rejection example or a declared check, tensions are surfaced to the user, and a declared set of units and ratios is measured against the output. Facts come only from the ledger, which resolves to the committed fact base `docs/heritage/verified-research.md`. The director records the strand and declared set once in the shared DNA and audits units across media.
+Design heritage is an opt-in lens in design-core (`references/heritage.md`, `heritage-ledger.md`, `proportion.md`, `modern-platform.md`), not a discipline and not a style. A gate opens it only when a brief invokes a tradition, school, designer, company, typeface or award as a style source or standard, or asks for an award-readiness review; at Rapid it costs nothing unless a tradition is invoked as a source or standard, and then at most one strand line. When open, each reference becomes a DNA principle with a rejection example or a declared check, tensions are surfaced to the user, and a declared set of units and ratios is measured against the output. Facts come only from the ledger, which resolves to the committed fact base `docs/heritage/verified-research.md`. The director records the strand and declared set once in the shared DNA and audits units across media.
 
 ## Critique lenses
 

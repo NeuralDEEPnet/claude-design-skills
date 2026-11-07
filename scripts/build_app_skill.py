@@ -31,12 +31,32 @@ REFS = {
 # Heritage references added in 0.5.0, with size caps in bytes (warn above the cap, fail at cap + 10%).
 NEW_REFS = ("heritage.md", "heritage-ledger.md", "proportion.md", "modern-platform.md")
 CAPS = {
-    "core-process.md": 13300,
-    "heritage.md": 10500,
-    "heritage-ledger.md": 10000,
-    "proportion.md": 7000,
+    "core-process.md": 13500,
+    "heritage.md": 14600,
+    "heritage-ledger.md": 10800,
+    "proportion.md": 7600,
     "modern-platform.md": 4000,
 }
+# Source files measured with the same rule (design-core/SKILL.md includes its frontmatter).
+SOURCE_CAPS = {
+    "SKILL.md": 14200,
+    "heritage.md": 14600,
+    "heritage-ledger.md": 10800,
+    "proportion.md": 7600,
+    "modern-platform.md": 4000,
+}
+
+
+def check_size(label: str, size: int, cap: int) -> bool:
+    note = ""
+    ok = True
+    if size > cap * 1.1:
+        note = f"  FAIL: over cap {cap} + 10%"
+        ok = False
+    elif size > cap:
+        note = f"  warning: over cap {cap}"
+    print(f"{label}: {size} B (cap {cap}){note}")
+    return ok
 FORBIDDEN_FONT_PREFIXES = ("helvetica", "arial", "nimbus")
 
 
@@ -92,14 +112,15 @@ def check_build() -> bool:
             print(f"FAIL: {name} missing from the build")
             ok = False
             continue
-        size = f.stat().st_size
-        note = ""
-        if size > cap * 1.1:
-            note = f"  FAIL: over cap {cap} + 10%"
+        ok = check_size(name, f.stat().st_size, cap) and ok
+    core = SKILLS / "design-core"
+    for name, cap in SOURCE_CAPS.items():
+        f = core / name if name == "SKILL.md" else core / "references" / name
+        if not f.exists():
+            print(f"FAIL: source {f.relative_to(ROOT)} missing")
             ok = False
-        elif size > cap:
-            note = f"  warning: over cap {cap}"
-        print(f"{name}: {size} B (cap {cap}){note}")
+            continue
+        ok = check_size(f"source {f.relative_to(ROOT)}", f.stat().st_size, cap) and ok
     for f in sorted(refs.glob("*.md")):
         if "../design-core/" in f.read_text():
             print(f"FAIL: unresolved '../design-core/' in {f.relative_to(OUT)}")

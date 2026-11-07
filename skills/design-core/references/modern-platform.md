@@ -1,6 +1,6 @@
 # Modern platform — what to use and how to check
 
-Read for web/world work that proposes a CSS/platform feature that is not Baseline "Widely available". Statuses live only here.
+Read before proposing a CSS or platform feature that is not Baseline "Widely available" (software-design lists the common ones). Statuses live only here.
 
 ## Tier rule
 | Baseline status | May be |
@@ -11,7 +11,7 @@ Read for web/world work that proposes a CSS/platform feature that is not Baselin
 
 - Check the exact compat key: a badge covers the whole feature, not your syntax (`text-box` below).
 - Newly available is not a reason to use it. WebGL is the fallback for WebGPU.
-- Offline or unfetched: label `[trend, checked <date>]`.
+- More than 60 days after the as-of date, or offline: use a row, label it `[trend, checked 2026-11-07]`, keep the fallback, and fetch the URL if you can.
 
 ## Dated snapshot
 As of 2026-11-07, web-features 3.45.0 (fetched `https://unpkg.com/web-features/data.json`); re-check after 60 days. Re-check: that URL, MDN compat tables, web.dev/baseline. Widely = 30 months after Newly.
@@ -28,12 +28,12 @@ As of 2026-11-07, web-features 3.45.0 (fetched `https://unpkg.com/web-features/d
 | `contrast-color()` | Newly | 2026-04-10 | black/white only, not an AA guarantee |
 | `light-dark()` | Newly | 2024-05-13 | Widely ~2026-11-13 `[inference]`; needs `color-scheme` |
 | `@property` | Newly | 2024-07-09 | |
-| `text-wrap: balance` | Newly | 2024-05-13 | line caps differ by engine; polish only |
+| `text-wrap: balance` | Newly | 2024-05-13 | Widely ~2026-11-13 `[inference]`; line caps differ by engine; polish only |
 | `text-wrap: pretty` | not Baseline | n/a | no Firefox: polish only |
 | `text-box-trim` | not Baseline (feature `text-box`) | key Newly 2026-08-18 | `text-edge` keywords cap/ex/alphabetic lack Firefox |
 | view transitions, same-document | Newly | 2025-10-14 | cross-document: not Baseline |
 | scroll-driven animations | Newly | 2026-10-27 | |
-| anchor positioning | not Baseline | n/a | parts Newly 2026-01-13 to 2026-02-24 |
+| anchor positioning | not Baseline | n/a | parts Newly 2026-01-13 to 2026-09-14 (`position-anchor`); `position-visibility` `anchor-valid`/`anchor-visible` not Baseline |
 | `prefers-reduced-motion` | Widely | 2022-07-15 | honour it for any motion |
 | `prefers-contrast` / `forced-colors` | Widely | 2024-11-30 / 2025-03-12 | |
 | WebGPU, WebXR | not Baseline | n/a | keep WebGL fallback |

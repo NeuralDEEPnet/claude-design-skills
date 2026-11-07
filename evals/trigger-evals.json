@@ -125,13 +125,28 @@
   "should_trigger": false
  },
  {
-  "query": "is Helvetica free to use on a commercial website or do I need a licence?",
-  "skill": "software-design",
+  "query": "is Helvetica free to use? asking for a legal memo, not a design",
+  "skill": "design-core",
   "should_trigger": false
  },
  {
   "query": "for my history quiz: in which year did the Bauhaus move from Weimar to Dessau?",
   "skill": "design-core",
   "should_trigger": false
+ },
+ {
+  "query": "logo and signage for my new cafe called Bauhaus Coffee, keep my existing brand colours",
+  "skill": "design-core",
+  "should_trigger": true
+ },
+ {
+  "query": "our site already uses Helvetica, fix the nav spacing",
+  "skill": "software-design",
+  "should_trigger": true
+ },
+ {
+  "query": "write copy in the style of a famous living designer",
+  "skill": "image-design",
+  "should_trigger": true
  }
 ]

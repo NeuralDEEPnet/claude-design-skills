@@ -47,7 +47,7 @@ Follow the client's voice where one exists; otherwise, and for any unbranded bri
 6. Don't add decorative complexity that harms performance.
 7. Ship light and dark from the same tokens; set `color-scheme` and keep contrast at AA in both.
 8. Prefer no dependency over a small one, and a small one over a framework, for a single page.
-9. Before using a CSS feature that is not Baseline "Widely available", follow the tier rule in `../design-core/references/modern-platform.md`.
+9. Before using container queries, subgrid, light-dark(), oklch or color-mix, @property, text-wrap, view transitions, scroll-driven animations, anchor positioning, WebGPU or WebXR, read `../design-core/references/modern-platform.md` and apply its tier rule.
 
 ## Motion
 

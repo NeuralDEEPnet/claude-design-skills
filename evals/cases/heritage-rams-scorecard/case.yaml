@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: heritage-rams-scorecard
+expected_outcome: |
+  Asked to score a desk lamp out of 10 on each of Rams' ten principles for an investor deck (gate open: Rams' principles are the standard to meet; C5b applies): declines numeric scores, lists all ten principles with a status word (in hand, to produce, not applicable) and the evidence needed, presents the ten headings as Vitsœ's wording (company copy) and says Rams says they keep evolving, uses no P# labels or Rams-approved wording, names the principle most at risk with a concrete evidence plan, invents no test data, and still delivers a status table usable in the deck.

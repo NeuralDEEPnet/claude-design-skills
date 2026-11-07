@@ -1,19 +1,14 @@
 # Proportion and base units
 
-Figures are arithmetic [inference] from cited ids (`references/heritage-ledger.md`); no threshold is classic doctrine. Tag every adopted value `[standard: <name>]` `[platform-fixed]` `[house heuristic]` `[brief]`; tunables are declared in the brief.
+Figures are arithmetic [inference] from cited ids (`references/heritage-ledger.md`); no threshold is classic doctrine. Tag every adopted value `[standard: <name>]` `[platform-fixed]` `[house heuristic]` `[brief]` (user-stated only).
 
 ## Declare first
-Write before any value (shape: `references/heritage.md`).
+Declared set (shape, exemptions, tolerance): `references/heritage.md`. Specific here:
+- Unit `u` = 4 px [house heuristic] unless platform-fixed. Residue scope: padding, margin, gap, box sizes, radii, line-height (objects: every mm dimension).
+- Ratio family and grid are declared too, e.g. type 1.25; 12 columns, 24 px line pitch [house heuristic] unless the user gave them [brief].
+- Exempt examples [platform-fixed]: 44 pt iOS control (PG c24); 36dp Material 1 button (archived). Min target 24 CSS px [standard: WCAG 2.2 SC 2.5.8].
 
-| Declare | Example | Basis |
-|---|---|---|
-| unit `u` | 4 px | [house heuristic] |
-| ratio family | type 1.25; space 1-8 x `u` | [house heuristic] |
-| grid / module | 12 columns, 24 px line pitch | [brief] |
-| exempt | 44 pt iOS control (PG c24); 36dp Material 1 button (archived) | [platform-fixed] |
-| min target | 24 CSS px | [standard: WCAG 2.2 SC 2.5.8] |
-
-No system in the DNA: pick and declare one; any consistent system beats an undeclared one. 4/8 steps are a convention (Material 1: 8dp components, 4dp icons/type; Apple HIG states no grid, PG c24). Never attribute 8 pt to Apple, Braun or Swiss.
+No system in the DNA: pick and declare one. 4/8 steps are a convention (Material 1: 8dp components, 4dp icons/type; Apple HIG states no grid, PG c24). Never attribute 8 pt to Apple, Braun or Swiss.
 
 ## Ratio families
 | Ratio | Value | Provenance [role] | Caveat |
@@ -22,10 +17,10 @@ No system in the DNA: pick and declare one; any consistent system beats an undec
 | φ | 1.6180 | Euclid VI Def. 3 [evidence, PG c1] | no evidence of ancient use, no reliable preference (PG c4-c8); 3:2, 16:10, 16:9, 4:3 are -7.3%, -1.1%, +9.9%, -17.6% off (PG c32 c33) |
 | ISO 3 R5, R10, R20, R40 | 1.585, 1.259, 1.122, 1.059 | ISO 3:1973 [evidence, PG c15-c17] | "1.25" is -0.71% vs R10, -6.9% over ten steps |
 | Modulor | 113 x φ = 182.84 | 1.83 m series [evidence, PG c12-c14] | published integers are additive (70+43=113), not φ powers; dates 1948/1950 |
-| page canon | 2:3 page, margins 2:3:4:6 inner:top:outer:bottom | Van de Graaf/Rosarivo [evidence, PG c22 c23] | Tschichold also used 1:1:2:3: say which |
+| page canon | 2:3 page, margins 2:3:4:6 inner:top:outer:bottom | Van de Graaf/Rosarivo [evidence, PG c22 c23] | Tschichold's golden canon gives 2:3:4:6; his medieval framework is 1:1:2:3: say which |
 
 ## Type scale
-Declare ratio and base (16 px [brief]); step n = 16 x r^n. Cell = unrounded/rounded 0.5 px. Compare output to the unrounded step or +/-0.5 px [house heuristic], not +/-2% (rounded sizes fail).
+Declare ratio and base (16 px [house heuristic]); step n = 16 x r^n. Cell = unrounded/rounded 0.5 px. Compare output to the unrounded step or +/-0.5 px [house heuristic], not +/-2% (rounded sizes fail).
 
 | n | 1.125 | 1.2 | 1.25 | 1.333 | 1.5 | 1.618 |
 |---|---|---|---|---|---|---|
@@ -53,11 +48,11 @@ u = 4, 44 `[platform-fixed]`: outliers 15, 17, 22, 30. u = 8: 12 gives 4.
 - **Field arithmetic** `fields x k + (fields - 1) gap lines = column lines` [SW c2 c3]: 57 lines, 4 fields: (57 - 3)/4 = 13.5, k = 13, 4 x 13 + 3 = 55, 2 spare. Do not attribute a baseline grid or two-weight cap to Müller-Brockmann.
 
 ## Fluid scale as code
-One ratio property; steps via `calc()`, no `pow()`:
+One ratio property; steps via `calc()`:
 
 ```css
 :root{
-  --r:1.25; /* [brief] */
+  --r:1.25; /* [house heuristic] */
   --s0:clamp(1rem,.9583rem + .2083vw,1.125rem); /* 16 @320, 18 @1280 px */
   --sm1:calc(var(--s0) / var(--r));
   --s1:calc(var(--s0) * var(--r));
@@ -66,27 +61,27 @@ One ratio property; steps via `calc()`, no `pow()`:
   line-height:1.5; /* explicit, for rlh */
 }
 ```
-- `pow(var(--r), 2)` in place of the chain [trend]: not in the fact base; matched in Chromium 153 only (2026-11-07). Ship the chain; see `references/modern-platform.md`.
+- `pow(var(--r), n)` may replace the chain (status: `references/modern-platform.md`); the chain is kept so the scale reads step by step.
 - `vw = (max - min)/(1280 - 320) x 100`; `rem = (min - vw x 3.2)/16`. 320 px = reflow width [standard: WCAG 2.2 SC 1.4.10]. Two ratios r1, r2: min = 16 x r1^n, max = 18 x r2^n.
-- Measured (Chromium 153, computed `font-size` px, steps -1/0/+1/+2/+3, within 0.01 of arithmetic): 320 px 12.80/16.00/20.00/25.00/31.25; 1280 px 14.40/18.00/22.50/28.12/35.15.
+- Measured (Chromium 153, computed `font-size` px, steps -1/0/+1/+2/+3, within 0.01 of arithmetic; the `pow()` form gives identical sizes): 320 px 12.80/16.00/20.00/25.00/31.25; 1280 px 14.40/18.00/22.50/28.12/35.15.
 - Zoom: on-screen size at 200% = 2 x size@(W/2)/size@W = 1.852 at 1280, 2.000 at 320. A positive `vw` slope lands below 2.0: judge by actually zooming (WCAG 1.4.4); MDN's "max >= 2x min" is a heuristic, not WCAG (PG c21). Fixed `rem` keeps 2.0. Headless emulation (viewport W/2, scale 2) is not real zoom: confirm headed.
 - `rlh` needs an explicit root `line-height` (`normal` is unpredictable): measured 1rlh = 24 px.
 
 ## Physical dimensions
-- **Renard (ISO 17):** choose the coarsest series that works (PG c15-c17). Computed 10^(n/k) [house heuristic]: radii R10 from 2 mm: 2.0, 2.5, 3.2, 4.0, 5.0, 6.3, 8.0, 10.0; housing widths R20 from 100 mm: 100, 112, 126, 141, 158, 178, 200.
-- **Modules:** Vitsœ 606 (company copy) is a two-width kit, not a single-module grid: bay centres 66.7 and 91.2 cm (PG c27). Braun Atelier 1/L1 "same proportions as the SK4" = family compatibility, not a module (BR av Atelier).
+- **Renard (ISO 3; ISO 17 guide):** choose the coarsest series that works (PG c15-c17). Use the ISO 3 basic-series numbers [standard: ISO 3]: R10 radii, mm: 2.00 2.50 3.15 4.00 5.00 6.30 8.00 10.0; R20 housing widths, mm: 100 112 125 140 160 180 200. Steps of these numbers: R10 1.25-1.27 (ratio 1.259), R20 1.11-1.14 (1.122). Unrounded 10^(n/k) values differ by up to 1.3% (R5-R40, measured): say which you use.
+- **Modules:** Vitsœ 606 narrow and wide bays (company copy: 65 and 90 cm shelves; an older print gives bay centres 66.7 and 91.2 cm, PG c27); a two-width kit, not a single-module grid; check the current guide. Braun Atelier 1/L1 "same proportions as the SK4" = family compatibility, not a module (BR av Atelier).
 - **Provenance** for every body-contact dimension: quantity, source, tolerance; start from a proven type; invent no anthropometric samples; else "unknown" (Klint, OL kl1 kl2).
 
 | Dimension | Value | Basis |
 |---|---|---|
 | door clear width | 32 in = 812.8 mm min; 36 in = 914.4 mm if doorway deeper than 24 in | [standard: 2010 ADA 404.2.3] |
-| operable parts | 34-48 in = 863.6-1219.2 mm above floor | [standard: 2010 ADA 404.2.7] |
+| door hardware height | 34-48 in = 863.6-1219.2 mm above floor | [standard: 2010 ADA 404.2.7] |
 
-80 in / 2030 mm is headroom (ADA 307.4), not a door rule (PG c35).
+Inch values govern; the Standards publish rounded metric figures. Door rows only: not a general control height; any other body-contact dimension is "unknown" until sourced. 80 in / 2030 mm is headroom (ADA 307.4), not a door rule (PG c35).
 
 ## Image, motion and world
 - **Aspect:** 1:1 1.000; 4:3 1.333; 3:2 1.500; 16:9 1.778; 9:16 0.5625 (centred crop of 16:9 keeps 31.6%); "21:9" is a Philips label for ~64:27 = 2.370; 1.91:1 is 1200x630 = 1.905 (PG c32 c33).
 - **Composition grid:** declared columns x rows; edges, focal points on lines or listed exceptions.
 - **Motion:** declare a duration ramp, e.g. 100/150/200/300 ms (ratios 1.50, 1.33, 1.50) [house heuristic], one easing family.
-- **World:** human-scale anchors only from verified sources (ADA rows above); the rest `[brief]`.
+- **World:** the ADA rows are doors and headroom, not human-scale anchors; every other anchor is `[brief]` or "unknown".
 - **Rubrics** [inference, simulated reviewer], yes/no: edges and focal points on a declared line or exception? every transition on the ramp and declared easing? every scale anchor sourced or `[brief]`?
