@@ -34,12 +34,12 @@ Rules: no row without a source unless it is tagged [inference]. Contradictory fi
 ## Inspiration panel
 
 ```markdown
-| Reference [role] | Quality to learn | Principle to take | Period device not to copy | Becomes (DNA principle or check) |
+| Reference [role] | Quality to learn | Principle to take | Period device not to copy | Becomes (DNA principle, anti-principle or check) |
 |---|---|---|---|---|
 | Braun SK 4 (1956; Gugelot concept, Rams proposed the transparent lid) [evidence] | proportion, restraint | controls grouped by task | white box with orange accent | DNA 2: every control names its task (rejects a decorative dial) |
 ```
 
-Rule: a row with no *Becomes* is deleted. Roles use the Research log tags.
+Rule: when the heritage gate is open, a row with no *Becomes* is deleted; a rejection example names an element in this deliverable that would change. Roles use the Research log tags.
 
 ## User panel
 
@@ -67,7 +67,7 @@ Rule: a row with no *Becomes* is deleted. Roles use the Research log tags.
 **Emotional character:**
 **Geometry / composition / hierarchy:**
 **Colour · material · type · motion:**
-**Declared set** (heritage loaded, or tokens/dimensions delivered): unit · ratio · grid · exemptions · thresholds [basis tag]
+**Declared set** (heritage loaded, or Standard/Full tokens or dimensions; block in `heritage.md`): unit · ratio family · grid · type · radius/angle · exempt · thresholds, each [basis tag]
 **Anti-principles — it must not become:**
 - …
 **Rejection test:** an example of an attractive design this DNA would reject, and why

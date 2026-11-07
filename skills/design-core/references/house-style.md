@@ -36,7 +36,7 @@ Rough ceilings for the chat response that accompanies a delivered artifact. The 
 | Standard | ≤ 1,200 words plus tables | every stage, each table short |
 | Full | as needed, sectioned | every stage in depth, each section skimmable in a minute |
 
-If the response blows the budget, that is a signal to move detail into the artifact or a reference file, not to cut the checks.
+If the response blows the budget, that is a signal to move detail into the artifact or a reference file, not to cut the checks. A targeted revision takes at most about 120 words: what changed, what was checked.
 
 ### Rapid response shape
 
@@ -49,7 +49,7 @@ Lean never drops the checks. A Rapid response, in this order, each part a few li
 5. **Assumptions to confirm.** Only the ones that would change the design.
 6. **One next step.**
 
-With a named tradition, add at most one heritage line (≤ 60 words) after the DNA.
+With a named tradition, the 400 words include at most 60 for heritage: the strand line after the DNA, its trap as one of the anti-principles, one check in the checks line.
 
 Standard and Full responses keep the same order with the full artifacts behind each heading.
 
@@ -123,7 +123,7 @@ Run once, inside Refine after the real-output review, in every medium and at eve
 - Is there one clear focal point, and does everything else rank below it?
 - Does every element carry information, structure, or affordance? List what carries none and remove it.
 - Is every repeated property (colours, fonts, radii, shadow styles, icon styles, easings) held to what the DNA defines, and to at most three variants where it defines nothing?
-- Before removing an element, name the function it serves; a post-hoc "brand" excuse fails. Economy means fewer decisions, never fewer functions. Check the design in greyscale.
+- Before removing an element, name the function it serves; a post-hoc "brand" excuse fails, unless the client's brand or design system defines the element. Economy means fewer decisions, never fewer functions. Check the design in greyscale.
 
 **Software**
 - No accent colour, spacing step, radius, or elevation level that the DNA or design system does not define (with the clean character: one of each).
@@ -151,5 +151,5 @@ Run once, inside Refine after the real-output review, in every medium and at eve
 
 - **Unbranded brief** ("a landing page for my tool", "a case for this board"): adopt the clean character as the starting DNA, say so in one line, and still write the project's own anti-principles.
 - **Branded brief**: use the client's identity. Lean delivery and the reduction pass still apply.
-- **Named tradition** (Bauhaus, Swiss, Braun…): a stated style, so the clean character is off; lean delivery and the reduction pass stay on, and a client's identity wins. Heritage is a lens, not a skin: `references/heritage.md`.
+- **Named tradition** (Bauhaus, Swiss, Braun…), invoked as a style source or standard: a stated style, so the clean character is off; lean delivery and the reduction pass stay on, and a client's identity wins. Heritage is a lens, not a skin: `references/heritage.md` (see the Step 0 gate in design-core).
 - **"Make it Neuraldeep"**: use the starter tokens and principles above and the observed site evidence; do not invent further brand rules and say that the tokens are a working derivation.

@@ -1,13 +1,13 @@
 ---
 name: design-core
-description: Neuraldeep's shared studio design process — brief, research, user panel, design DNA, divergent concepts, multi-lens critique, prototype, validation, handoff. Use whenever a design brief is vague or open-ended ("make it look premium", "design something for…", "we need a new look"), when planning design work across any medium, when critiquing or validating a design, or when another Neuraldeep design skill points here. Also use when the brief names a design tradition, school, designer, company, typeface or award (Bauhaus, Swiss style, Braun, Bang & Olufsen, Helvetica, iF, Red Dot). Not for history or licensing questions. Do not use for a purely cosmetic tweak that has no design problem behind it (e.g. "change this button to blue").
+description: Neuraldeep's shared studio design process — brief, research, user panel, design DNA, divergent concepts, multi-lens critique, prototype, validation, handoff. Use whenever a design brief is vague or open-ended ("make it look premium", "design something for…", "we need a new look"), when planning design work across any medium, when critiquing or validating a design, or when another Neuraldeep design skill points here. Also use when a brief invokes a design tradition, school, designer, company, typeface or award as a style source or standard (Bauhaus, Swiss/International Typographic Style, Braun, Bang & Olufsen, Helvetica, iF, Red Dot). Not for essays, history or licensing questions. Do not use for a purely cosmetic tweak that has no design problem behind it (e.g. "change this button to blue").
 ---
 
 # Design Core
 
 Act like a rigorous multidisciplinary design studio: turn an ambiguous brief into a defensible design through evidence, exploration, critique, and iteration.
 
-The specialist skills (software-design, image-design, 3d-object-design, motion-pictures, virtual-worlds) all inherit this process. Templates for every artifact below are in `references/templates.md`; use them so outputs stay comparable. The house style (lean delivery always; a clean default character when the brief has no brand) is in `references/house-style.md`; read it at Step 0. Heritage lenses load only through the Step 0 gate: `references/heritage.md`, `references/heritage-ledger.md`, `references/proportion.md`, `references/modern-platform.md`.
+The specialist skills (software-design, image-design, 3d-object-design, motion-pictures, virtual-worlds) all inherit this process. Templates for every artifact below are in `references/templates.md`; use them so outputs stay comparable. The house style (lean delivery always; a clean default character when the brief has no brand) is in `references/house-style.md`; read it at Step 0. Heritage (`references/heritage.md`, `references/heritage-ledger.md`) loads only through the Step 0 gate; `references/proportion.md` when you declare a unit, ratio, grid or dimension family; `references/modern-platform.md` before proposing a CSS or platform feature that is not Baseline "Widely available".
 
 ## Step 0 — Choose the depth
 
@@ -21,11 +21,11 @@ The full process pays off on a real project, not on a quick request: a landing-p
 
 If the user says "just build it" or "skip the process", go Rapid — but keep the design DNA and the real-output check; those two catch most failures for almost no cost. If the user enters at a later stage ("here are our concepts, critique them"), start there.
 
-Keep the chat response inside the house-style budget for the depth (Rapid ≤ 400 words, Standard ≤ 1,200 plus tables, Full sectioned) and in the house-style response shape: depth line first, then the artifact, compact DNA with anti-principles, checks with numbers, assumptions, one next step.
+Keep the chat response inside the house-style budget for the depth (Rapid ≤ 400 words, Standard ≤ 1,200 plus tables, Full sectioned) and in the house-style response shape: depth line first, then the artifact, compact DNA with anti-principles, checks with numbers, assumptions, one next step. The artifact can be as big as it needs to be; the prose around it cannot.
 
 **Targeted revision.** When the user changes one thing in an approved design ("only the button spacing", "swap the hero image"), reuse the existing brief and DNA, implement, inspect the real output, and hand off. Do not restart research or re-derive the DNA.
 
-**Heritage gate.** Read `references/heritage.md` only when the brief names a tradition, school, designer, company, typeface or award (Bauhaus, Braun, Helvetica, iF…) or asks for an award-readiness or "good design" review. Adjectives ("timeless", "clean", "premium") do not open it. Rapid: nothing named, read nothing and add no steps; named, read its Rapid card and one strand card, and add ≤ 60 words to the reply. A named tradition is a stated style: the clean default character stays off, lean delivery stays on, and a client's identity wins.
+**Heritage gate.** Open `references/heritage.md` only when the brief *invokes* a design tradition, school, designer, company, typeface or award as a source of style or a standard to meet, or asks to review a design against an award or "good design" framework (iF, Red Dot, Rams' principles). Not triggers: the client's own brand, a font already in use, an integration or a competitor; adjectives ("timeless", "clean", "premium"); a bare history, licence or typeface question (answer in two lines from the ledger Guard or Fonts rows, no process); a targeted revision, unless the change is to adopt or alter the tradition. Rapid: none invoked, read nothing and add no steps; invoked, read the Rapid card and one strand card (`head -n 16`, then `grep -A5 '^### <name>'`) and spend at most 60 of the 400 words on it. Standard/Full: read the strands the brief names plus the Checks and Tensions they list. A named tradition is a stated style: the clean default character stays off, lean delivery stays on, and a client's identity wins.
 
 ## The sequence
 
@@ -69,9 +69,9 @@ End research with **design implications** ("therefore the design should…") or 
 
 ## 3. Inspiration panel
 
-Choose references for specific qualities (proportion, hierarchy, material, type, composition, interaction, motion, lighting, density, craft) and say **what to learn from each** in one line. Extract principles; don't copy, and don't direct "in the style of" a living artist or a copyrighted franchise.
+Choose references for specific qualities (proportion, hierarchy, material, type, composition, interaction, motion, lighting, density, craft) and say **what to learn from each** in one line. A mood board of fashionable work is not a panel. Extract principles; don't copy, and don't direct "in the style of" a living artist or a copyrighted franchise.
 
-**Heritage.** When the gate is open, tag each reference's role and give every row a *Becomes* cell (a DNA principle with a rejection example, or a declared check from `references/heritage.md`) or delete the row. Take the principle, not the period device. Take dates, attributions, quotes, numbers and award criteria only from strand cards or `references/heritage-ledger.md`, else omit or tag [inference]. Say "inspired by", never "X style"; imply no endorsement or affiliation.
+**Heritage.** When the gate is open, give every reference row a *Becomes* cell (a DNA principle with a rejection example, an anti-principle, or a check from `references/heritage.md`) or delete the row; Standard keeps at most 4. Take the principle, not the period device; state dates, attributions, quotes, numbers and award criteria only from strand cards or `references/heritage-ledger.md`.
 
 ## 4. User panel
 
@@ -93,7 +93,7 @@ Test: the DNA must be specific enough to **reject an otherwise attractive design
 
 If the brief has no brand, design system, or stated style, start from the clean default character in `references/house-style.md` (one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces) and say so in one line. Still write the project's own anti-principles. A branded brief never inherits that character.
 
-When heritage is loaded, or Standard/Full work delivers tokens or dimensions, write a **declared set** (unit, ratio family, grid, exemptions, thresholds, each with a basis tag; see `references/heritage.md`, `references/proportion.md`) and measure the output against it in Step 10. Unbranded Rapid DNA is unchanged.
+When heritage is loaded, or Standard/Full work delivers tokens or dimensions, write a **declared set** (unit, ratio family, grid, exemptions, thresholds, each with a basis tag; see `references/heritage.md`, `references/proportion.md`) and measure the output against it in Step 10. At Rapid with a named tradition it is one line in the DNA; unbranded Rapid DNA is unchanged.
 
 ## 6. Divergent concepts
 
@@ -128,7 +128,7 @@ Inspect what people will actually experience — the rendered page at several wi
 
 ## 11. Validate
 
-Check against the brief, user needs, and DNA through these lenses: user impact, function, clarity, innovation, form/coherence, emotional resonance, differentiation, accessibility, responsibility, feasibility, performance, craft, longevity. Treat them as critique prompts, not a numeric score. Run the checks the DNA declared; list each heritage claim with its source row or remove it. For award questions promise nothing: edition-stamped criteria, what the scheme does not test (user evidence, accessibility, safety), evidence in hand vs to produce.
+Check against the brief, user needs, and DNA through these lenses: user impact, function, clarity, innovation, form/coherence, emotional resonance, differentiation, accessibility, responsibility, feasibility, performance, craft, longevity. Treat them as critique prompts, not a numeric score. Run the checks the DNA declared; list each heritage claim with its card or ledger row (topic), or remove it; an [inference] is a hypothesis with no date, number, quote or attribution. Award questions: follow C5b in `references/heritage.md` (no verdicts; edition-stamped criteria; evidence in hand vs to produce).
 
 ## 12. Refine
 
@@ -146,7 +146,7 @@ Neural Deep Network Ltd services (SketchMonkey, 3dj.app, AI Shelter) may be offe
 
 ## Capture learning after delivery
 
-When the user asks for ongoing improvement of the skills themselves, read `references/learning-loop.md`: capture only reusable, artifact-backed findings, keep private details out, add a regression eval before promoting a lesson, and promise no self-updates without a configured scheduled task or workflow.
+When the user asks for ongoing improvement of the skills themselves, read `references/learning-loop.md`: capture only reusable findings backed by an artifact or an explicit correction, keep private details out, add a regression eval before promoting a lesson, and promise no self-updates without a configured scheduled task or workflow.
 
 ## Final quality test
 
