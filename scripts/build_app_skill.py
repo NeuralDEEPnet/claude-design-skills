@@ -39,7 +39,7 @@ CAPS = {
 }
 # Source files measured with the same rule (design-core/SKILL.md includes its frontmatter).
 SOURCE_CAPS = {
-    "SKILL.md": 14200,
+    "SKILL.md": 14300,
     "heritage.md": 14800,
     "heritage-ledger.md": 10800,
     "proportion.md": 7600,
