@@ -21,6 +21,7 @@ This repository contains public design skills for Claude (Claude Code plugin + C
 10. Keep specialist skills composable. Hybrid tasks should be coordinated through `design-director`.
 11. Keep the house style (`skills/design-core/references/house-style.md`) in two layers: lean delivery always; the clean default character only for unbranded briefs. Never let it override a client's own identity.
 12. Mirror substantive skill changes to the Codex edition (`NeuralDEEPnet/codex-openai-skills`, `.agents/skills/`), which shares the same skill bodies.
+13. Heritage facts come from `skills/design-core/references/heritage-ledger.md`, whose ids resolve to `docs/heritage/verified-research.md`; add a row only with a source URL, date and role, and re-check `modern-platform.md` after 60 days.
 
 ## Quality bar
 

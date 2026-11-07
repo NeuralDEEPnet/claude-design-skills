@@ -27,7 +27,7 @@ Vary the model, not the theme: progressive vs dense · guided vs expert · spati
 
 ## Visual system
 
-Define spacing rhythm (e.g. 4/8-pt), grid, type scale and hierarchy, colour **roles** (not just swatches: surface, text, accent, success/warn/error, focus), elevation logic, icon and image language, controls, states, motion principles. Express them as tokens when code is involved so the system survives implementation.
+Define spacing rhythm (e.g. 4/8-pt), grid, type scale and hierarchy, colour **roles** (not just swatches: surface, text, accent, success/warn/error, focus), elevation logic, icon and image language, controls, states, motion principles. Express them as tokens when code is involved so the system survives implementation. When a strand or declared set exists, generate the tokens from it (`../design-core/references/proportion.md`: unit and ratio as custom properties) and list the outliers.
 
 **Lean system defaults** (from the house style; use them unless the project's DNA says otherwise): one accent colour; one spacing scale; one radius; one elevation logic, with spacing doing the grouping before borders or shadows; one type family in two weights; light and dark themes from the same tokens from day one; fluid layout with a readable measure. For an unbranded brief, start from the starter tokens in `house-style.md` and say so.
 
@@ -47,6 +47,7 @@ Follow the client's voice where one exists; otherwise, and for any unbranded bri
 6. Don't add decorative complexity that harms performance.
 7. Ship light and dark from the same tokens; set `color-scheme` and keep contrast at AA in both.
 8. Prefer no dependency over a small one, and a small one over a framework, for a single page.
+9. Before using a CSS feature that is not Baseline "Widely available", follow the tier rule in `../design-core/references/modern-platform.md`.
 
 ## Motion
 
@@ -66,6 +67,8 @@ Concrete checks (WCAG 2.2 AA as the floor):
 - Performance targets for web: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1
 - First-glance comprehension: in 5 seconds, can a target user say what this is and what to do?
 - Dark theme rendered and checked, not just declared; `color-scheme` set so form controls follow
+- Standard+: WCAG 1.4.12 with user overrides applied (line height 1.5, paragraph spacing 2×, letter spacing 0.12 em, word spacing 0.16 em) causes no loss of content; fixed-height boxes and tight leading are the usual causes
+- Standard+: greyscale pass; meaning and the primary action survive without colour
 
 ## Reduction pass (in Refine, after the render review)
 

@@ -46,6 +46,14 @@ Never claim printability or manufacturability without checking these against the
 
 If the **3DJ Studio** plugin is installed, hand the modelling stages to it: `3dj-design` models the architecture concepts as parametric blockouts and renders them side by side at one scale with black silhouettes; `3dj-make` compiles, measures and renders each part on a free local bench; `3dj-print` checks walls, overhangs, bed fit and orientation; `3dj-concept` (needs a 3DJ account) turns an image or prompt into a concept mesh. If only the 3dj.app connector is available: `cad_get_starters` / `openscad_get_starters` for editable parametric starting points, `openscad_compile_model` to compile and measure closed geometry, `generate_from_text` / `generate_from_image_url` for fast generative mesh blockouts, and `request_print_quote` to request an operator review (review only — no payment or production is triggered). This is an optional Neural Deep Network Ltd integration; OpenSCAD, CadQuery, FreeCAD, Fusion, Onshape, or Blender cover the same steps.
 
+## Reveal, repair and provenance
+
+**Reveal** (lid, drawer, deployable part): default none. If a named user task needs one, specify the states (closed, moving, open, blocked, power lost), the obstruction response, the manual fallback and the off-state silhouette. A hidden primary control fails.
+
+**Repair:** list parts, fasteners, procedure and availability period as evidence, or write "unknown".
+
+**Provenance:** body-contact dimensions carry quantity, source and tolerance; part and housing families use one declared series (`../design-core/references/proportion.md`).
+
 ## Reduction pass
 
 Silhouette reads in pure black. Radii belong to one family unless the DNA specifies otherwise. Part lines sit only where assembly, tolerance, or service needs them. Every surface feature serves grip, ventilation, assembly, wear, legibility, or a brand expression the DNA defines, or it goes. Subtract before adding; add one feature back only if removal broke function or stance. See `../design-core/references/house-style.md`.

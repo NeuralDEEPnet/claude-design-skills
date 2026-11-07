@@ -113,6 +113,10 @@ The studio has a house style with two layers (`skills/design-core/references/hou
 - **Lean delivery** governs how every output is made and explained, regardless of the client's brand: answer first, artifacts not essays, budgets per depth, one next step, a reduction pass before handoff, targeted revisions that reuse the existing brief and DNA.
 - **Clean default character** is a visual baseline used only when a brief has no brand, design system, or stated style. It is derived from observed evidence on neuraldeep.net and labelled as a derivation. The project's own DNA always wins, so the methodology remains style-agnostic.
 
+## Heritage layer
+
+Design heritage is an opt-in lens in design-core (`references/heritage.md`, `heritage-ledger.md`, `proportion.md`, `modern-platform.md`), not a discipline and not a style. A gate opens it only when a brief names a tradition, school, designer, company, typeface or award, or asks for an award-readiness review; at Rapid it costs at most one strand line. When open, each reference becomes a DNA principle with a rejection example or a declared check, tensions are surfaced to the user, and a declared set of units and ratios is measured against the output. Facts come only from the ledger, which resolves to the committed fact base `docs/heritage/verified-research.md`. The director records the strand and declared set once in the shared DNA and audits units across media.
+
 ## Critique lenses
 
 The studio uses award-caliber design criteria as critique lenses, not as a fake scorecard:
@@ -129,4 +133,4 @@ The studio uses award-caliber design criteria as critique lenses, not as a fake 
 - accessibility,
 - longevity.
 
-Do not claim endorsement by any award organization.
+The lenses borrow award vocabulary, not authority: passing them is not a prediction of any award outcome. Do not claim endorsement by any award organization.

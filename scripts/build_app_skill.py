@@ -11,6 +11,7 @@ Usage: python scripts/build_app_skill.py            -> dist/design-studio/
 import os
 import re
 import shutil
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -27,6 +28,17 @@ REFS = {
     "virtual-worlds": "virtual-worlds.md",
 }
 
+# Heritage references added in 0.5.0, with size caps in bytes (warn above the cap, fail at cap + 10%).
+NEW_REFS = ("heritage.md", "heritage-ledger.md", "proportion.md", "modern-platform.md")
+CAPS = {
+    "core-process.md": 13300,
+    "heritage.md": 10500,
+    "heritage-ledger.md": 10000,
+    "proportion.md": 7000,
+    "modern-platform.md": 4000,
+}
+FORBIDDEN_FONT_PREFIXES = ("helvetica", "arial", "nimbus")
+
 
 def body(text: str) -> str:
     """Drop YAML frontmatter."""
@@ -39,6 +51,9 @@ def relink(text: str) -> str:
     text = text.replace("`references/templates.md`", "`templates.md`")
     text = text.replace("../design-core/references/house-style.md", "house-style.md")
     text = text.replace("`references/house-style.md`", "`house-style.md`")
+    for new in NEW_REFS:
+        text = text.replace(f"../design-core/references/{new}", new)
+        text = text.replace(f"`references/{new}`", f"`{new}`")
     text = text.replace("`references/learning-loop.md`", "`learning-loop.md`")
     text = text.replace("../design-core/SKILL.md", "core-process.md")
     text = text.replace("../<skill-name>/SKILL.md", "<skill-name>.md")
@@ -58,10 +73,45 @@ def main() -> None:
     for skill, ref in REFS.items():
         src = (SKILLS / skill / "SKILL.md").read_text()
         (OUT / "references" / ref).write_text(relink(body(src)))
-    for ref in ("templates.md", "house-style.md", "learning-loop.md"):
-        shutil.copy(SKILLS / "design-core" / "references" / ref, OUT / "references" / ref)
+    for ref in ("templates.md", "house-style.md", "learning-loop.md", *NEW_REFS):
+        src = (SKILLS / "design-core" / "references" / ref).read_text()
+        (OUT / "references" / ref).write_text(relink(src))
     build_3dj()
     print(f"built {OUT}")
+    if not check_build():
+        sys.exit(1)
+
+
+def check_build() -> bool:
+    """Print sizes, warn above caps, and return False on any failure (cap + 10%, stale links, font files)."""
+    ok = True
+    refs = OUT / "references"
+    for name, cap in CAPS.items():
+        f = refs / name
+        if not f.exists():
+            print(f"FAIL: {name} missing from the build")
+            ok = False
+            continue
+        size = f.stat().st_size
+        note = ""
+        if size > cap * 1.1:
+            note = f"  FAIL: over cap {cap} + 10%"
+            ok = False
+        elif size > cap:
+            note = f"  warning: over cap {cap}"
+        print(f"{name}: {size} B (cap {cap}){note}")
+    for f in sorted(refs.glob("*.md")):
+        if "../design-core/" in f.read_text():
+            print(f"FAIL: unresolved '../design-core/' in {f.relative_to(OUT)}")
+            ok = False
+    for base in (SKILLS, OUT.parent):
+        if not base.exists():
+            continue
+        for f in base.rglob("*"):
+            if f.is_file() and f.name.lower().startswith(FORBIDDEN_FONT_PREFIXES):
+                print(f"FAIL: forbidden font file {f}")
+                ok = False
+    return ok
 
 
 # 3DJ Studio lives in its own repository (NeuralDEEPnet/3dj-claude-plugin). The app skill carries

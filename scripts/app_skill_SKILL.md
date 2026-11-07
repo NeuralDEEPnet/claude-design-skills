@@ -1,6 +1,6 @@
 ---
 name: design-studio
-description: Neuraldeep Design Studio — a professional multidisciplinary design process for websites, apps and dashboards, still images and key art, physical and 3D-printable products, motion and video, and VR/AR/virtual worlds. Use whenever someone asks to design, redesign, art-direct, critique, or plan the look and feel of something — including vague briefs like "make it look premium", "design a landing page", "make a printable robot", "storyboard a launch video", or "build a VR showroom" — and for launches that span several media. Do not use for purely mechanical edits with no design decision (e.g. "change the button to blue", "resize these photos").
+description: Neuraldeep Design Studio — a professional multidisciplinary design process for websites, apps and dashboards, still images and key art, physical and 3D-printable products, motion and video, and VR/AR/virtual worlds. Use whenever someone asks to design, redesign, art-direct, critique, or plan the look and feel of something — including vague briefs like "make it look premium", "design a landing page", "make a printable robot", "storyboard a launch video", or "build a VR showroom" — and for launches that span several media. Do not use for purely mechanical edits with no design decision (e.g. "change the button to blue", "resize these photos"). Also when the brief names a design tradition, school, designer, company, typeface or award (Bauhaus, Swiss, Braun, Helvetica, iF, Red Dot); not for history or licensing questions.
 ---
 
 # Design Studio
@@ -16,6 +16,10 @@ This file routes the work. The detail lives in `references/`; read only what the
 | `references/core-process.md` | Always, for Standard or Full depth — the 13-stage studio process |
 | `references/templates.md` | When writing any studio artifact (brief, user panel, DNA, concept cards, critique, handoff) |
 | `references/house-style.md` | Always, at Step 0 — lean delivery rules and response budgets; plus the clean default character and starter tokens when the brief has no brand of its own |
+| `references/heritage.md` | Only when a tradition, school, designer, company, typeface or award is named, or an award/good-design review asked; at Rapid, only its Rapid card and one strand card |
+| `references/heritage-ledger.md` | Only to state a date, attribution, quote, number or criterion |
+| `references/proportion.md` | When defining a unit, ratio, grid, type scale or dimension family |
+| `references/modern-platform.md` | Web/world work proposing a non-Baseline-widely-available feature |
 | `references/learning-loop.md` | The user asks to improve these skills from a lesson learned |
 | `references/software-design.md` | Websites, apps, dashboards, design systems, coded UI |
 | `references/image-design.md` | Key art, posters, product images, prompts for image models, logos/identity |
@@ -57,6 +61,7 @@ Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 
 - **Review what people will experience** (the rendered page, the image at final size, the model from several views, the film at speed, the world at scale). If you can't render it, say so and give the checks.
 - **Accessibility, feasibility, and performance are design inputs**, with concrete thresholds in each discipline reference.
 - **Lean and clean.** Answer first, artifacts not essays, one next step. Subtract before you add. An unbranded brief starts from the clean default character (one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces) and says so; a branded brief never inherits it.
+- **Heritage is a lens, not a style.** A reference becomes a rule or is dropped; surface live tensions; never imply endorsement.
 - **Targeted revisions stay targeted.** A change to an approved design reuses its brief and DNA; implement, inspect, hand off.
 
 ## Producing the output

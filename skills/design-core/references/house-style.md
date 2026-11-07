@@ -14,6 +14,7 @@ The repository stays style-agnostic: a client brief with its own identity never 
 - **[evidence]** neuraldeep.net (observed 2026-11-05): near-black ink `#171A1C` on warm off-white paper `#F4EFE6`; Avenir 85 Heavy headings with Helvetica Light body; a two-fragment headline ("AI design agents. Ideas into reality."); one call to action per view; pale sky `#BDE9FB`, blush `#EAE0DA` and sage `#D0E0CD` as occasional surface tints.
 - **[opinion]** The owner describes the intended philosophy as "lean and clean, fresh".
 - **[inference]** Everything below that turns those observations into rules. Treat it as the studio's working interpretation, not as a published brand manual.
+- **[inference]** One accent, one family, two weights and the 8 px step are studio choices, not Swiss, Bauhaus or Rams practice.
 
 ## Lean delivery (always)
 
@@ -47,6 +48,8 @@ Lean never drops the checks. A Rapid response, in this order, each part a few li
 4. **Checks.** What was verified, with numbers (contrast ratios for text and primary action in each theme, widths tried), and what was *not* rendered or tested.
 5. **Assumptions to confirm.** Only the ones that would change the design.
 6. **One next step.**
+
+With a named tradition, add at most one heritage line (≤ 60 words) after the DNA.
 
 Standard and Full responses keep the same order with the full artifacts behind each heading.
 
@@ -120,6 +123,7 @@ Run once, inside Refine after the real-output review, in every medium and at eve
 - Is there one clear focal point, and does everything else rank below it?
 - Does every element carry information, structure, or affordance? List what carries none and remove it.
 - Is every repeated property (colours, fonts, radii, shadow styles, icon styles, easings) held to what the DNA defines, and to at most three variants where it defines nothing?
+- Before removing an element, name the function it serves; a post-hoc "brand" excuse fails. Economy means fewer decisions, never fewer functions. Check the design in greyscale.
 
 **Software**
 - No accent colour, spacing step, radius, or elevation level that the DNA or design system does not define (with the clean character: one of each).
@@ -147,4 +151,5 @@ Run once, inside Refine after the real-output review, in every medium and at eve
 
 - **Unbranded brief** ("a landing page for my tool", "a case for this board"): adopt the clean character as the starting DNA, say so in one line, and still write the project's own anti-principles.
 - **Branded brief**: use the client's identity. Lean delivery and the reduction pass still apply.
+- **Named tradition** (Bauhaus, Swiss, Braun…): a stated style, so the clean character is off; lean delivery and the reduction pass stay on, and a client's identity wins. Heritage is a lens, not a skin: `references/heritage.md`.
 - **"Make it Neuraldeep"**: use the starter tokens and principles above and the observed site evidence; do not invent further brand rules and say that the tokens are a working derivation.

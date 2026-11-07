@@ -98,5 +98,40 @@
   "query": "minify this CSS file",
   "skill": "software-design",
   "should_trigger": false
+ },
+ {
+  "query": "design a Bauhaus-inspired poster for our design school's open day, A2, three colours max",
+  "skill": "image-design",
+  "should_trigger": true
+ },
+ {
+  "query": "build a pricing page for our dev tool on a strict Swiss grid: big type, lots of white space, four columns",
+  "skill": "software-design",
+  "should_trigger": true
+ },
+ {
+  "query": "sketch a bluetooth speaker with that calm Braun-like presence, wood and fabric, maybe a lid that opens",
+  "skill": "3d-object-design",
+  "should_trigger": true
+ },
+ {
+  "query": "make the settings page feel timeless and classic, clean and minimal, nothing flashy",
+  "skill": "software-design",
+  "should_trigger": true
+ },
+ {
+  "query": "who actually coined 'form follows function'? settling a bet",
+  "skill": "design-core",
+  "should_trigger": false
+ },
+ {
+  "query": "is Helvetica free to use on a commercial website or do I need a licence?",
+  "skill": "software-design",
+  "should_trigger": false
+ },
+ {
+  "query": "for my history quiz: in which year did the Bauhaus move from Weimar to Dessau?",
+  "skill": "design-core",
+  "should_trigger": false
  }
 ]

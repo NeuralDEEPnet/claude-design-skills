@@ -19,6 +19,8 @@ Reference specific qualities: framing, camera/lens, depth, lighting, colour, tex
 
 Make quick thumbnails (sketches, simple shapes, or descriptive layouts if you can't draw) before rendering. Vary the **composition strategy**, not just the subject: focal placement, scale, negative space, viewpoint, silhouette, depth, rhythm, crop, information density. Three thumbnails that share a centred subject on a gradient are one idea.
 
+Declare a composition grid or an aspect-ratio family (see `../design-core/references/proportion.md`); named traditions (Bauhaus, Swiss, Constructivist posters) go through the design-core Step 0 gate.
+
 ## Rendering
 
 With image-generation tools, iterate deliberately and keep a short log:

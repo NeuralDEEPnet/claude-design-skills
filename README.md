@@ -34,7 +34,7 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 | Skill | Use for |
 |---|---|
 | **design-director** | Multi-medium projects — routes, sequences, keeps one design DNA |
-| **design-core** | The shared studio process, depth modes, templates, and the lean-and-clean house style |
+| **design-core** | The shared studio process, depth modes, templates, the lean-and-clean house style, and the opt-in design-heritage lens |
 | **software-design** | Websites, apps, dashboards, design systems, coded UI |
 | **image-design** | Key art, posters, product imagery, image-model prompts, identity marks |
 | **3d-object-design** | Physical and 3D-printable products, enclosures, CMF, manufacturing |
@@ -67,6 +67,15 @@ Two layers, different scope (`skills/design-core/references/house-style.md`):
 - **Lean delivery**, always: the artifact leads, rationale stays inside a budget for the depth, every handoff ends with one next step, and a reduction pass removes whatever carries no information, structure, or affordance.
 - **Clean default character**, only for briefs with no brand of their own: one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces. Starter tokens (light and dark, AA contrast) are derived from neuraldeep.net and labelled as a derivation. A branded brief never inherits it — the repository stays style-agnostic.
 
+## Design heritage
+
+When a brief names a tradition, school, designer, company, typeface or award (Bauhaus, Swiss style, Braun, Bang & Olufsen, Helvetica, iF, Red Dot), or asks for an award-readiness review, design-core loads a heritage lens (`skills/design-core/references/heritage.md`): strand cards that separate the principle to take from the period device to drop, five checks that can fail, surfaced tensions, and a declared set of units and ratios measured after the build. It is a lens, not a style, and it stays lean:
+
+- Adjective-only briefs ("timeless", "clean", "minimal") do not open it; at Rapid with no named tradition nothing loads and no steps are added.
+- Every reference must become a rule or a check, or it is dropped.
+- Dates, attributions, quotes, numbers and award criteria come only from `heritage-ledger.md`, whose ids resolve to the verified fact base [docs/heritage/verified-research.md](docs/heritage/verified-research.md). It records what failed verification so the agent does not repeat it.
+- "Inspired by", never "X style"; no endorsement, no scores, no promise of an award.
+
 ## Principles
 
 1. User evidence before aesthetics.
@@ -86,7 +95,7 @@ Fully usable without proprietary services. Where they fit a production step, the
 
 ## Evaluation
 
-`evals/` holds a prompt suite (26 tasks), four graded cases in the `claude plugin eval` layout (`evals/cases/`), and 20 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the final skill text vs 0.37 without it on Sonnet (directional, 6 runs each); see the same file.
+`evals/` holds a prompt suite (26 tasks), 4 graded cases in the `claude plugin eval` layout (`evals/cases/`), and 20 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the final skill text vs 0.37 without it on Sonnet (directional, 6 runs each); see the same file. The v0.5 heritage cases have no recorded results until they are run; results go in that file only after real runs.
 
 ```bash
 claude plugin eval skills/<skill-name>   # requires Claude Code

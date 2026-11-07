@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: heritage-swiss-rapid
+expected_outcome: |
+  Rapid depth with one named tradition: reads only the heritage Rapid card and one strand card (at most once), adds one strand line, one trap and one check (about 60 words), says inspired by, declares a unit, ratio and grid with basis tags and reports a measured value, ships one HTML file that bundles no Helvetica, attributes no number to Mueller-Brockmann beyond the 4x13+3=55 field arithmetic, and keeps the clean default character off.

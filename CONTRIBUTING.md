@@ -27,6 +27,7 @@ The repository is intentionally style-agnostic. A contribution should improve th
 - Proprietary integrations remain optional.
 - At least one eval is added or updated when behavior materially changes.
 - Examples distinguish facts, references, and design judgment.
+- Heritage facts (dates, attributions, quotes, numbers, award criteria) enter only through `skills/design-core/references/heritage-ledger.md`, with a source URL, date and role; never from memory.
 
 ## Naming
 

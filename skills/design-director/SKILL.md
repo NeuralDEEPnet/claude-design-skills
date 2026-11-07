@@ -33,7 +33,7 @@ If nothing fits, use design-core directly and name the gap in the handoff.
 
 ## 3. One shared design DNA
 
-Create a single project DNA before any specialist starts. If the project has no brand of its own, start it from the clean default character in `../design-core/references/house-style.md` and say so; a branded project never inherits that character. Each specialist may add a **medium extension** (e.g. motion DNA, spatial DNA) but cannot contradict the shared principles or anti-principles. Sub-brands get their own DNA only with a stated reason. Cross-medium incoherence — a calm product with a frantic launch film — is the most common multi-medium failure, and one DNA is the cheapest prevention.
+Create a single project DNA before any specialist starts. If the project has no brand of its own, start it from the clean default character in `../design-core/references/house-style.md` and say so; a branded project never inherits that character. Each specialist may add a **medium extension** (e.g. motion DNA, spatial DNA) but cannot contradict the shared principles or anti-principles. Sub-brands get their own DNA only with a stated reason. Cross-medium incoherence — a calm product with a frantic launch film — is the most common multi-medium failure, and one DNA is the cheapest prevention. If heritage is loaded (`../design-core/references/heritage.md`), record the strand and the declared set once in the shared DNA; a medium may extend them, not fork them, and heritage conflicts across media go to the user.
 
 ## 4. Sequence by dependency
 
@@ -70,7 +70,7 @@ When disciplines conflict, prioritise: (1) safety and accessibility, (2) the cor
 
 ## 7. Cross-medium critique
 
-Put the pieces side by side and check: does each express the same DNA? Do assets actually fit their interfaces (dimensions, colour space, timing, file formats)? Would a user moving from film → site → product → world feel one brand and one promise? Run the reduction pass across the set: anything one medium added that the shared DNA does not define and the others don't need (a second accent, a third typeface, a looping flourish) goes.
+Put the pieces side by side and check: does each express the same DNA? Do assets actually fit their interfaces (dimensions, colour space, timing, file formats)? Would a user moving from film → site → product → world feel one brand and one promise? Run the reduction pass across the set: anything one medium added that the shared DNA does not define and the others don't need (a second accent, a third typeface, a looping flourish) goes. Run one cross-medium unit/ratio audit: list values from different media that should align (spacing unit, radius family, aspect ratios, duration ramp); outliers need a stated function or a fix.
 
 ## Output
 

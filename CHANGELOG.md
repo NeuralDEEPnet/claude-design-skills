@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.5.0 — Design heritage as a lens — 2026-11-07
+
+Heritage (Werkbund, Bauhaus, Braun, Ulm, Swiss style, Helvetica, Bang & Olufsen, iF/Red Dot, proportion systems) is a lens, not a style: it is loaded only when a brief names a tradition, school, designer, company, typeface or award, or asks for an award-readiness or "good design" review. Adjective-only briefs ("timeless", "clean", "minimal") do not open it, and nothing heritage-related runs at Rapid depth unless a tradition is named.
+
+**Ships**
+- **Four design-core references** (`skills/design-core/references/`): `heritage.md` (gate, Rapid card, 11 strand cards, five falsifiable checks, tensions, declared set, carry-forward), `heritage-ledger.md` (citable facts, a "do not say" guard, disputed dates, font licences, edition-stamped award crosswalk), `proportion.md` (declared units and ratios, computed type scales, residue audit, fluid scale as tested CSS, physical dimensions), `modern-platform.md` (tier rule, dated Baseline snapshot with a 60-day stale rule, standards that are not heritage).
+- **Hooks** in `design-core` (Steps 0, 3, 5, 6, 8, 11 and the final test), `house-style.md` (a named tradition is a stated style: clean default character off, lean delivery on, client identity wins), `templates.md` (Inspiration panel gains *Becomes*; optional declared-set, tensions and outlier lines), `design-director` (one shared strand and declared set; cross-medium unit and ratio audit), `software-design`, `3d-object-design` (reveal, repair and provenance), `image-design`.
+- **App-skill build checks** (`scripts/build_app_skill.py`): bundles the four references, prints their byte sizes, warns above cap and fails at cap + 10%, asserts no `../design-core/` link survives outside `3dj/`, and fails if a Helvetica, Arial or Nimbus font file appears under `skills/` or `dist/`.
+- **Evals**: 7 new graded cases, a no-heritage-load regression grader on `lean-unbranded-landing`, new trigger queries and tasks. Results are recorded in `docs/EVAL-RESULTS.md` only after real runs; none are claimed here.
+- **Verified fact base** committed at `docs/heritage/verified-research.md` (not loaded at runtime). Policy: heritage facts (dates, attributions, quotes, numbers, award criteria) appear only on a strand card or ledger row that traces to it; otherwise omitted or tagged `[inference]`. Volatile facts (Baseline status, regulation dates, award wording, fees, weights) never enter skill bodies; award fees and weights are not stored anywhere. Third-party marks are "inspired by", never "X style", never endorsement.
+- Plugin and marketplace entry `neuraldeep-design-studio` 0.5.0.
+
+**Deliberately deferred**
+- A `rule_audit` script (the residue audit is hand arithmetic or Bash in the eval case; no check script ships).
+- Heritage hooks in `motion-pictures` and `virtual-worlds` (they inherit through design-core).
+- Codex mirror: pending in `NeuralDEEPnet/codex-openai-skills`.
+
+**3DJ pin**: the bundled 3DJ references and bench stay pinned to 3DJ Studio 0.4.1; upstream drift is out of scope for this release.
+
 ## v0.4.0 — Lean and clean — 2026-11-05
 
 - **House style** (`design-core/references/house-style.md`): Neuraldeep's lean and clean philosophy as two layers. *Lean delivery* always applies: answer first, artifacts not essays, one next step, response budgets per depth (Rapid ≤ 400 words, Standard ≤ 1,200 plus tables), subtract before you add, targeted revisions stay targeted. The *clean default character* applies only when a brief has no brand of its own: one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces; with anti-principles and a starter token set (light and dark, AA contrast computed) derived from neuraldeep.net. Evidence, owner intent, and inference are tagged separately; the repository stays style-agnostic for branded work.

@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: heritage-residue-audit
+expected_outcome: |
+  Audit against a declared set using arithmetic: at a 4 px unit with 44 px exempt as platform-fixed, the outliers are exactly 15, 17, 22 and 30 (residues 1, 1, 2, 2); against a 1.25 type scale from 16 px, 18 and 34 are off the scale while 13, 16, 20, 25 and 31 are on it; at an 8 px unit 12 and 4 would have residue 4. It does not call 1.25 wrong or attribute it to the classics, tags tunables as house heuristic or brief, and says passing is not quality. Bash is allowed in this case only, so the arithmetic can be computed.

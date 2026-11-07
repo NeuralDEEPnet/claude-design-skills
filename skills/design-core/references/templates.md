@@ -34,10 +34,12 @@ Rules: no row without a source unless it is tagged [inference]. Contradictory fi
 ## Inspiration panel
 
 ```markdown
-| Reference | Quality to learn | What to take | What not to take |
-|---|---|---|---|
-| Braun SK 4 (1956) | proportion, restraint | single dominant volume, honest controls | period nostalgia |
+| Reference [role] | Quality to learn | Principle to take | Period device not to copy | Becomes (DNA principle or check) |
+|---|---|---|---|---|
+| Braun SK 4 (1956; Gugelot concept, Rams proposed the transparent lid) [evidence] | proportion, restraint | controls grouped by task | white box with orange accent | DNA 2: every control names its task (rejects a decorative dial) |
 ```
+
+Rule: a row with no *Becomes* is deleted. Roles use the Research log tags.
 
 ## User panel
 
@@ -65,6 +67,7 @@ Rules: no row without a source unless it is tagged [inference]. Contradictory fi
 **Emotional character:**
 **Geometry / composition / hierarchy:**
 **Colour · material · type · motion:**
+**Declared set** (heritage loaded, or tokens/dimensions delivered): unit · ratio · grid · exemptions · thresholds [basis tag]
 **Anti-principles — it must not become:**
 - …
 **Rejection test:** an example of an attractive design this DNA would reject, and why
@@ -116,6 +119,8 @@ Check across cards: if two concepts would produce the same wireframe or blockout
 **Traceability:**
 | Decision | Traces to (user need / constraint / DNA principle) |
 |---|---|
+**Tensions surfaced:** collision → default taken → what would reverse it
+**Declared-set outliers:** value · measured · function or fix
 **Unresolved risks:**
 **Production / implementation notes:**
 **Next validation step:** the single most useful test, with who/what/how
