@@ -32,7 +32,7 @@ REFS = {
 NEW_REFS = ("heritage.md", "heritage-ledger.md", "proportion.md", "modern-platform.md")
 CAPS = {
     "core-process.md": 13500,
-    "heritage.md": 14600,
+    "heritage.md": 14800,
     "heritage-ledger.md": 10800,
     "proportion.md": 7600,
     "modern-platform.md": 4000,
@@ -40,7 +40,7 @@ CAPS = {
 # Source files measured with the same rule (design-core/SKILL.md includes its frontmatter).
 SOURCE_CAPS = {
     "SKILL.md": 14200,
-    "heritage.md": 14600,
+    "heritage.md": 14800,
     "heritage-ledger.md": 10800,
     "proportion.md": 7600,
     "modern-platform.md": 4000,

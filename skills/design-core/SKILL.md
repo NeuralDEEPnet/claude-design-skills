@@ -1,6 +1,6 @@
 ---
 name: design-core
-description: Neuraldeep's shared studio design process — brief, research, user panel, design DNA, divergent concepts, multi-lens critique, prototype, validation, handoff. Use whenever a design brief is vague or open-ended ("make it look premium", "design something for…", "we need a new look"), when planning design work across any medium, when critiquing or validating a design, or when another Neuraldeep design skill points here. Also use when a brief invokes a design tradition, school, designer, company, typeface or award as a style source or standard (Bauhaus, Swiss/International Typographic Style, Braun, Bang & Olufsen, Helvetica, iF, Red Dot). Not for essays, history or licensing questions. Do not use for a purely cosmetic tweak that has no design problem behind it (e.g. "change this button to blue").
+description: Neuraldeep's shared studio design process — brief, research, user panel, design DNA, divergent concepts, multi-lens critique, prototype, validation, handoff. Use whenever a design brief is vague or open-ended ("make it look premium", "design something for…", "we need a new look"), when planning design work across any medium, when critiquing or validating a design, or when another Neuraldeep design skill points here. Also use for award-readiness and "good design" reviews ("are we ready to enter iF or Red Dot?", "review this against Rams' principles"), and when a brief invokes a design tradition, school, designer, company or typeface (Bauhaus, Swiss/International Typographic Style, Braun, Bang & Olufsen, Helvetica) as a style source or standard. Not for essays, history or licensing questions. Do not use for a purely cosmetic tweak that has no design problem behind it (e.g. "change this button to blue").
 ---
 
 # Design Core
@@ -71,7 +71,7 @@ End research with **design implications** ("therefore the design should…") or 
 
 Choose references for specific qualities (proportion, hierarchy, material, type, composition, interaction, motion, lighting, density, craft) and say **what to learn from each** in one line. A mood board of fashionable work is not a panel. Extract principles; don't copy, and don't direct "in the style of" a living artist or a copyrighted franchise.
 
-**Heritage.** When the gate is open, give every reference row a *Becomes* cell (a DNA principle with a rejection example, an anti-principle, or a check from `references/heritage.md`) or delete the row; Standard keeps at most 4. Take the principle, not the period device; state dates, attributions, quotes, numbers and award criteria only from strand cards or `references/heritage-ledger.md`.
+**Heritage.** When the gate is open, give every reference row a *Becomes* cell (a DNA principle with a rejection example, an anti-principle, or a check from `references/heritage.md`) or delete the row. Take the principle, not the period device; state dates, attributions, quotes, numbers and award criteria only from strand cards or `references/heritage-ledger.md`.
 
 ## 4. User panel
 
@@ -93,7 +93,7 @@ Test: the DNA must be specific enough to **reject an otherwise attractive design
 
 If the brief has no brand, design system, or stated style, start from the clean default character in `references/house-style.md` (one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces) and say so in one line. Still write the project's own anti-principles. A branded brief never inherits that character.
 
-When heritage is loaded, or Standard/Full work delivers tokens or dimensions, write a **declared set** (unit, ratio family, grid, exemptions, thresholds, each with a basis tag; see `references/heritage.md`, `references/proportion.md`) and measure the output against it in Step 10. At Rapid with a named tradition it is one line in the DNA; unbranded Rapid DNA is unchanged.
+When heritage is loaded, or Standard/Full work delivers tokens or dimensions, write a **declared set** (unit, ratio family, grid, exemptions, thresholds, each with a basis tag; see `references/heritage.md`, `references/proportion.md`) and measure the output against it in Step 10. At Rapid it is one line in the DNA, and only with a named tradition.
 
 ## 6. Divergent concepts
 

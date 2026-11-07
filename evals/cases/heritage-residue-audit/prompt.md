@@ -5,7 +5,7 @@ timeout_seconds: 600
 allowed_tools: [Read, Glob, Grep, Skill, Write, Edit, Bash]
 ---
 
-Audit this CSS against a declared set. Unit: 4 px, applied to every spacing and sizing value (padding, margin, gap, width, height, line-height) except font-size. 44 px is a platform touch-target minimum, so treat it as exempt. Type: a 1.25 scale from a 16 px base, checked on font-size only, with each value compared to the unrounded step within 0.5 px. List the outliers with the measured residue and say whether each needs a function or a fix. Also tell me whether switching the unit to 8 px would change the list.
+Design review: audit our component CSS against our declared set. Unit: 4 px, applied to every spacing and sizing value (padding, margin, gap, width, height, line-height) except font-size. 44 px is a platform touch-target minimum, so treat it as exempt. Type: a 1.25 scale from a 16 px base, checked on font-size only, with each value compared to the unrounded step within 0.5 px. List the outliers with the measured residue and say whether each needs a function or a fix. Also tell me whether switching the unit to 8 px would change the list.
 
 ```css
 .card { padding: 15px 22px; margin-bottom: 30px; gap: 12px; }

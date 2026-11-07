@@ -2,7 +2,7 @@
 A lens, not a style. Roles: [evidence] [opinion] [trend] [inspiration] [inference]; Take lines, checks and carry-forward rows are [inference]. Ids (`WB BR SW BO AW PG PL OL` + claim id) are maintainers' provenance in `docs/heritage/verified-research.md`, not in the app skill: cite a row's topic. Other facts: `references/heritage-ledger.md`.
 
 ## Rapid card
-Reply: at most 60 of the 400 words. (1) One strand line: phase or team, "inspired by", not a look. (2) That strand's trap as an anti-principle. (3) One check below, with its result: web or CAD = a measured value with its basis tag; image, motion or world = one yes/no rubric question [inference, simulated reviewer]. The declared set (one line) goes in the DNA, outside the 60 words.
+Reply: at most 60 of the 400 words. (1) One strand line: phase or team, "inspired by", not a look. (2) That strand's trap as an anti-principle. (3) One check below, with its result: web or CAD = a measured value with its basis tag; image, motion or world = one yes/no rubric question [inference, simulated reviewer]. The declared set goes in the DNA as one line, outside the 60 words, each value with its basis tag: "unit 8 px [house heuristic] · type 1.25 [house heuristic] · 12 columns [brief]".
 Two named: one line each inside the same 60 words. No strand card (Scandinavian, mid-century, Memphis, Apple, Muji): say once "no verified card for X", give a principle and a check [inference], no dates or attributions.
 Checks: C1 name each element's function, remove one at a time, re-run the task. C2 declare unit and ratio, measure every value, list outliers. C3 view at three widths, in greyscale, in one colour, with user text overrides. C4a controls by tier, product at rest. C4b a reveal only for a named task: states and fallback. C5a differences from comparators, structural or surface. C5b award readiness: evidence status per criterion, never a verdict.
 Rubrics: image: are edges and focal points on a declared line or listed exception? motion: is every transition on the declared ramp and easing? world: is every scale anchor sourced or [brief]?
@@ -101,7 +101,7 @@ C5b Award readiness. Test: stamp the edition of the criteria (if the user's edit
 Passing shows self-consistency with the declared rules, not quality or lineage authenticity.
 
 ## Tensions
-Surface only live tensions: Rapid none (take the default silently); Standard at most 3; Full as needed. State each with its default; only a fork that blocks the build is asked, and it uses one of the 3 questions. Rows: collision | default | reverses when.
+Surface only live tensions: Rapid none (take the default silently); Standard at most 3; Full as needed. State each as collision → default taken → what would reverse it; only a fork that blocks the build is asked, and it uses one of the 3 questions. Rows: collision | default | reverses when.
 - Client identity vs named tradition | client wins; the tradition gives principles | the client relaxes it
 - Standardisation vs individuality | types plus a stated variation space [WB c16-c18] | the brief needs a one-off
 - Neutrality vs warmth | choose face and material for the job; never "neutral" | the brief wants warmth or a clinical register

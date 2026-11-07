@@ -4,4 +4,4 @@ focus: trace
 weight: 1
 ---
 
-The client's gold `#B8902A` stays in use for links, the primary button and rules.
+The client's gold `#B8902A` is used for the primary button and for rules, and appears on links as text colour or as an underline.
