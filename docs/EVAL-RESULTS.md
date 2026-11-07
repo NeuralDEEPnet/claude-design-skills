@@ -1,5 +1,38 @@
 # Eval results
 
+## v0.5.0 — design heritage — 2026-11-07
+
+Executor: Claude Sonnet 5.5 via `claude plugin eval` (Claude Code 2.1.319), with/without ablation, 3 judge votes per assertion by a Sonnet judge, Write and Edit granted, Bash withheld, report not published. Two runs per arm per case (three for the dropped case). **Directional only.**
+
+Three passes. Pass 1 ran all 12 cases and hit the account's 5-hour usage limit partway: both arms of `vague-premium-brief` and the with-arm of `reveal-vs-restraint-speaker` were scored 0 without being judged. Between passes 1 and 2 I changed things after reading the results: the `design-core` and router descriptions (they now name award-readiness and "good design" reviews), the Rapid card (a tagged declared-set example), and several graders that were over-literal or not verifiable from the trace (Sullivan wording, "each principle paired with an anti-principle", gold on links, the spacing-diff graders). Pass 2 re-ran the cut-off cases and every case whose graders or the skill text had changed. Scores below are from the latest valid pass for each case; the edited graders are not comparable with pass 1, and the run is not blind to my edits.
+
+| Case | Pass | With | Without | Δ | Skill fired in the with-arm |
+|---|---|---|---|---|---|
+| heritage-bauhaus-guard (trap: four planted falsehoods) | 2 | 0.86 | 0.36 | +0.50 | yes |
+| lean-unbranded-landing (regression; now 11 graders) | 1 | 0.86 | 0.36 | +0.50 | yes |
+| heritage-rams-scorecard (trap: asks for numeric scores) | 2 | 0.59 | 0.27 | +0.32 | yes |
+| printable-desk-robot (regression) | 1 | 0.43 | 0.14 | +0.29 | yes |
+| vague-premium-brief (regression, re-run after the limit) | 2 | 0.75 | 0.50 | +0.25 | yes |
+| reveal-vs-restraint-speaker | 2 | 0.46 | 0.23 | +0.23 | yes |
+| heritage-swiss-rapid | 1 | 0.58 | 0.38 | +0.21 | yes |
+| award-readiness-honest | 2 | 0.70 | 0.50 | +0.20 | yes (pass 1: no, 0.45 vs 0.50) |
+| rapid-404-page (regression) | 1 | 0.57 | 0.43 | +0.14 | no |
+| heritage-vs-client-identity | 2 | 0.65 | 0.77 | −0.12 | yes |
+| heritage-targeted-revision-cheap | 2 | 0.81 | 1.00 | −0.19 | no |
+
+Mean Δ over these 11 cases: +0.21. "Fired" is read from visible Skill calls and turn counts in the traces.
+
+**What the runs show**
+- Where the skill fired (9 of the 11 cases) the plugin beat the baseline in 8, by +0.20 to +0.50. The planted-falsehood case moved most: with the plugin the replies correct Sullivan 1896, the subway manual (Standard Medium, Helvetica only from December 1989) and the Parthenon (about 2.25), and decline to attribute an 8-pt grid to Braun; the baseline repeated or ignored them.
+- **Firing is the main failure mode, as in v0.4.** With the first description the kettle award prompt never fired the skill (0 of 2: 0.45 vs 0.50, a single turn each); after the description named award-readiness and "good design" reviews it fired 2 of 2 (0.70 vs 0.50). `rapid-404-page` did not fire in either with-run. The two negative deltas split into noise and a real question: `heritage-targeted-revision-cheap` never fired the skill (both arms are the same behaviour: zero reference reads and no heritage block, which is the intended outcome, and the gap is two graders on reply format); `heritage-vs-client-identity` did fire, and its replies kept the client's gold, ornament and fonts, surfaced the tension and stated the Gropius 1925 position, so its deficit sits in graders that read "gold for links" literally (the agents used ink link text with a gold underline because gold on paper is about 2.8:1) and in sampling noise at two runs per arm.
+- **Rapid heritage discipline is partly followed.** In `heritage-swiss-rapid` the agents read exactly `head -n 16` of `heritage.md` (the Rapid card and rules), named "Swiss = Helvetica" as an anti-principle, kept Helvetica out of the page and said what they had not rendered. They missed the basis tags on the declared set, and one reply ran 467 words against the 400-word Rapid budget. The Rapid card now shows a tagged one-line example; not re-run.
+- A residue-audit case was dropped. Over 6 runs (three per arm) the skill never fired on an audit-only prompt, even rephrased as a design problem; both arms answered with the same single turn (0.47 with vs 0.53 without), so it could not discriminate. The pinned arithmetic (outliers 15, 17, 22, 30 at 4 px; 18 and 34 off a 1.25 scale) was recomputed by script and by a reviewer instead.
+
+**Caveats**
+- Two runs per arm: a single run moves a case mean by 0.1 to 0.2.
+- Many assertions grade the skill against its own rules. The judge sees a capped part of the trace, so graders about tool use ("opens no reference file") are only as reliable as the visible part. Unanimous 0/3 fails on a reply that plainly meets the statement (for example two Sullivan and anti-principle graders in pass 1) were judge or wording errors, which is why those graders were rewritten.
+- Pass 1 cost about US$168 and pass 2 about US$71 as reported by the tool.
+
 ## v0.4.0 — lean-unbranded-landing — 2026-11-05
 
 Executor: Claude Sonnet 5.5 via `claude plugin eval` (with/without ablation, 3 runs per arm, 3 judge votes per assertion, Bash withheld because the host could not sandbox it). Directional only.

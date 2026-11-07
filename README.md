@@ -95,7 +95,7 @@ Fully usable without proprietary services. Where they fit a production step, the
 
 ## Evaluation
 
-`evals/` holds a prompt suite (34 tasks), 12 graded cases in the `claude plugin eval` layout (`evals/cases/`), and 30 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the final skill text vs 0.37 without it on Sonnet (directional, 6 runs each); see the same file. The v0.5 heritage cases have no recorded results until they are run; results go in that file only after real runs.
+`evals/` holds a prompt suite (34 tasks), 11 graded cases in the `claude plugin eval` layout (`evals/cases/`), and 30 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the final skill text vs 0.37 without it on Sonnet (directional, 6 runs each); see the same file. The v0.5 heritage cases are recorded there too (two runs per arm, directional; firing of the skill is the main variance).
 
 ```bash
 claude plugin eval skills/<skill-name>   # requires Claude Code
