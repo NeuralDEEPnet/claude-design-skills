@@ -1,5 +1,10 @@
 # Changelog
 
+
+## Unreleased — 2026-11-06
+
+- 3DJ Studio entry 0.10.1: the 32-tool 3DJ server (rendered views, assembly and joint checks, revision compare, A4 drawings, STEP/STL/GLB import, feature library, review comments) used throughout the 3DJ skills. The app skill bundles the updated 3DJ references.
+
 ## v0.4.0 — Lean and clean — 2026-11-05
 
 - **House style** (`design-core/references/house-style.md`): Neuraldeep's lean and clean philosophy as two layers. *Lean delivery* always applies: answer first, artifacts not essays, one next step, response budgets per depth (Rapid ≤ 400 words, Standard ≤ 1,200 plus tables), subtract before you add, targeted revisions stay targeted. The *clean default character* applies only when a brief has no brand of its own: one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces; with anti-principles and a starter token set (light and dark, AA contrast computed) derived from neuraldeep.net. Evidence, owner intent, and inference are tagged separately; the repository stays style-agnostic for branded work.
