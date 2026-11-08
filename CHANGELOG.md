@@ -15,7 +15,7 @@ Heritage (Werkbund, Bauhaus, Braun, Ulm, Swiss style, Helvetica, Bang & Olufsen,
 **Deliberately deferred**
 - A `rule_audit` script (the residue audit is hand arithmetic or Bash in the eval case; no check script ships).
 - Heritage hooks in `motion-pictures` and `virtual-worlds` (they inherit through design-core).
-- Codex mirror: pending in `NeuralDEEPnet/codex-openai-skills`.
+- Codex edition: a sister project; ideas are ported by inspiration, not mirrored.
 
 **3DJ pin**: the bundled 3DJ references and bench stay pinned to 3DJ Studio 0.4.1; upstream drift is out of scope for this release.
 

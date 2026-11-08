@@ -2,7 +2,7 @@
 
 Verified 2026-11-06 from `docs/heritage/verified-research.md` (FB). Ids point into it: `WB` Werkbund/Bauhaus, `BR` Braun/Rams/Ulm, `SW` Swiss/Helvetica, `BO` B&O, `AW` awards, `PG` proportion, `PL` platform, `OL` other lineages; `av` = that section's "added by verifier" row (`BR av Atelier`). Ids are provenance for maintainers: `docs/heritage/verified-research.md` is not bundled in the app skill; cite the row's Topic there.
 Roles: `[evidence] [opinion] [trend] [inspiration] [inference]`. Quotes < 15 words. Company, museum and organiser pages are self-description: a row sourced only from the organisation's own pages is `opinion` for any claim of quality or influence.
-Braun, Vitsœ, Rams, B&O/Beo*, iF, Red Dot, MoMA, Helvetica are third-party marks: "inspired by" only, no endorsement.
+Name the inspiration as "inspired by"; claim no approval or affiliation.
 Add a row only with source, date, role. Fact not here: omit or tag `[inference]`.
 
 ## Guard — do not say
@@ -21,7 +21,6 @@ Add a row only with source, date, role. Fact not here: omit or tag `[inference]`
 | "award-ready", "iF-winning", "Red Dot style" | schemes judge entries; Red Dot publishes no weights; iF equal weighting is organiser-reported | "in hand / to produce, per edition criteria" | AW c03, c05, c07, c17-c19 |
 | Inter or Arimo is "Helvetica-compatible" | Arimo/Liberation are Arial-metric; Inter differs up to 149 per mille | "Arial-metric" | SW c28-c31, c33 |
 | B&O "first tangential arm"; "B&O is Bauhaus" | marketing; company or commentator framing | "B&O says its 1934 radio was inspired by the Bauhaus (company)" | BO c8, c9, c11, c13-c15 |
-| Rams-style/Braun-inspired shipped copy | names go in the process reply only | "inspired by X" in the process note | policy |
 
 ## Rows
 

@@ -1,6 +1,6 @@
 ---
 name: software-design
-description: Design or redesign websites, landing pages, apps, dashboards, admin tools, onboarding flows, design systems, and any coded user interface. Use whenever UX, UI, information architecture, responsive layout, accessibility, interaction design, or front-end implementation quality matters — including "make this page look better", "redesign our dashboard", "build a landing page", or "our app feels cluttered". Do not use for standalone marketing imagery with no interactive product (use image-design).
+description: Design or redesign websites, landing pages, apps, dashboards, admin tools, onboarding flows, design systems, and any coded user interface. Use whenever UX, UI, information architecture, responsive layout, accessibility, interaction design, or front-end implementation quality matters — including "make this page look better", "redesign our dashboard", "build a landing page", or "our app feels cluttered" — and for small single-file asks ("a 404 page", "one HTML file for my tool"), where the process scales down to Rapid. Do not use for standalone marketing imagery with no interactive product (use image-design).
 ---
 
 # Software Design
