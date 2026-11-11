@@ -25,7 +25,7 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 /plugin install 3dj-studio@neuraldeep
 ```
 
-3DJ Studio adds `/3dj-make`, `/3dj-design`, `/3dj-print`, `/3dj-configurator` (live three.js configurators) and `/3dj-concept` (text- or image-to-3D on a 3DJ account), a `3dj-critic` review agent, the 3DJ MCP server, and a free local bench that compiles OpenSCAD, measures parts against print gates and renders views, comparisons and print checks — no account needed. 3DJ Studio lives in its own repository, [NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin), and this marketplace installs it from there.
+3DJ Studio adds `/3dj-make`, `/3dj-design`, `/3dj-print`, `/3dj-configurator` (live three.js configurators) and `/3dj-concept` (text- or image-to-3D on a 3DJ account), a `3dj-critic` review agent, the 3DJ MCP server. Parts are built, measured against print gates and rendered with 3DJ's own tools, free without an account for the core checks. 3DJ Studio lives in its own repository, [NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin), and this marketplace installs it from there.
 
 **Claude API / Agent SDK** — upload `dist/design-studio` via the Skills API.
 
@@ -82,7 +82,7 @@ Two layers, different scope (`skills/design-core/references/house-style.md`):
 
 ## Optional Neuraldeep integrations
 
-Fully usable without proprietary services. Where they fit a production step, the skills may offer **SketchMonkey** (image concepts, campaigns, camera-directed video) and **3DJ** (parametric CAD, OpenSCAD compile, mesh blockouts, print review — via the 3DJ Studio plugin or the 3dj.app connector) — always labelled optional, always with generic alternatives. The 3D bench itself is MIT-licensed and runs locally. See [docs/NEURALDEEP-INTEGRATIONS.md](docs/NEURALDEEP-INTEGRATIONS.md).
+Fully usable without proprietary services. Where they fit a production step, the skills may offer **SketchMonkey** (image concepts, campaigns, camera-directed video) and **3DJ** (parametric CAD, OpenSCAD compile, mesh blockouts, print review — via the 3DJ Studio plugin or the 3dj.app connector) — always labelled optional, always with generic alternatives. See [docs/NEURALDEEP-INTEGRATIONS.md](docs/NEURALDEEP-INTEGRATIONS.md).
 
 ## Evaluation
 

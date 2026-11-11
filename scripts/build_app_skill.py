@@ -45,7 +45,7 @@ def relink(text: str) -> str:
     text = text.replace("the repository's `docs/NEURALDEEP-INTEGRATIONS.md`",
                         "the router SKILL.md (optional integrations)")
     text = text.replace("If the **3DJ Studio** plugin is installed, hand the modelling stages to it:",
-                        "For the modelling stages, use the bundled 3D bench and 3DJ references:")
+                        "For the modelling stages, use the bundled 3DJ references (they need the 3DJ connector):")
     text = re.sub(r"`3dj-(make|design|concept|print|configurator)`", r"`references/3dj/\1.md`", text)
     return text
 
@@ -101,14 +101,12 @@ def build_3dj() -> None:
               "(clone NeuralDEEPnet/3dj-claude-plugin next to this repo or set THREEDJ_PLUGIN_DIR)")
         return
     (OUT / "references" / "3dj").mkdir(parents=True, exist_ok=True)
-    (OUT / "scripts").mkdir(exist_ok=True)
     for skill, ref in TDJ_SKILLS.items():
         src = (TDJ / skill / "SKILL.md").read_text()
         (OUT / "references" / "3dj" / ref).write_text(relink_3dj(body(src)))
     for ref in TDJ_REFS:
         src = (TDJ / "3dj-make" / "references" / ref).read_text()
         (OUT / "references" / "3dj" / ref).write_text(relink_3dj(src))
-    shutil.copy(TDJ / "3dj-make" / "scripts" / "bench.mjs", OUT / "scripts" / "bench.mjs")
 
 
 if __name__ == "__main__":
