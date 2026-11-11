@@ -1,6 +1,11 @@
 # Changelog
 
 
+
+## Unreleased — 2026-11-11
+
+- 3DJ Studio entry 0.11.0. The Claude directory accepts scripts only from Verified organizations, so 3DJ Studio dropped its local bench. The app skill no longer bundles `scripts/bench.mjs`; its 3DJ references build, measure and render through the 3DJ connector's free tools.
+
 ## Unreleased — 2026-11-06
 
 - 3DJ Studio entry 0.10.1: the 32-tool 3DJ server (rendered views, assembly and joint checks, revision compare, A4 drawings, STEP/STL/GLB import, feature library, review comments) used throughout the 3DJ skills. The app skill bundles the updated 3DJ references.

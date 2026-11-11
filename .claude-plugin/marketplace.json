@@ -20,8 +20,8 @@
         "source": "github",
         "repo": "NeuralDEEPnet/3dj-claude-plugin"
       },
-      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts, rendered views and assembly checks, A4 drawings, live three.js configurators, text- and image-to-3D, and print checks, with a free local compile, measure and preview bench.",
-      "version": "0.10.1"
+      "description": "3DJ as the Design Studio's CAD bench: printable parts, compared concepts, rendered views and assembly checks, A4 drawings, live three.js configurators, text- and image-to-3D, and print checks, all through 3DJ's own tools.",
+      "version": "0.11.0"
     }
   ]
 }

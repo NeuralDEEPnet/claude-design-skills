@@ -44,7 +44,7 @@ Specialist Skills
 Generic tools OR optional MCP integrations
 ```
 
-The first adapter is **3DJ Studio** ([NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin)), a separate plugin in its own repository that this marketplace installs from GitHub. It bundles the 3DJ MCP server, five production skills (including `3dj-configurator` for live three.js configurators and `3dj-concept` for text- and image-to-3D on a 3DJ account), an independent `3dj-critic` agent, and an MIT-licensed local bench that compiles OpenSCAD, measures against the 3DJ print gates and renders views, comparisons and print checks without any account. The core Design Studio plugin does not install or require it; `3d-object-design` hands off to it only when it is present.
+The first adapter is **3DJ Studio** ([NeuralDEEPnet/3dj-claude-plugin](https://github.com/NeuralDEEPnet/3dj-claude-plugin)), a separate plugin in its own repository that this marketplace installs from GitHub. It bundles the 3DJ MCP server, five production skills (including `3dj-configurator` for live three.js configurators and `3dj-concept` for text- and image-to-3D on a 3DJ account), and an independent `3dj-critic` agent. Parts are built, measured against the 3DJ print gates and rendered with 3DJ's own tools, most of them free and usable without an account. The local bench was removed in 3DJ Studio 0.11.0, because the Claude directory accepts scripts only from Verified organizations. The core Design Studio plugin does not install or require it; `3d-object-design` hands off to it only when it is present.
 
 Further adapters may expose image generation, asset management, simulation, evaluation, or other production capabilities.
 
