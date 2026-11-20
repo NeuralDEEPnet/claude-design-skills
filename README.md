@@ -91,7 +91,7 @@ Fully usable without proprietary services. Where they fit a production step, the
 
 ## Evaluation
 
-`evals/` holds a prompt suite (29 tasks), five graded cases in the `claude plugin eval` layout (`evals/cases/`), and 25 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the final skill text vs 0.37 without it on Sonnet (directional, 6 runs each); see the same file.
+`evals/` holds a prompt suite (29 tasks), five graded cases in the `claude plugin eval` layout (`evals/cases/`), and 25 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the skills vs 0.37 without, and the v0.5 case `review-with-receipt` 0.85 vs 0.48, on Sonnet (directional, 6 runs each); see the same file.
 
 ```bash
 claude plugin eval skills/<skill-name>   # requires Claude Code
