@@ -1,5 +1,9 @@
 # Eval results
 
+## v0.5.0 — review-with-receipt — 2026-11-20
+
+Result recorded below once the run completes.
+
 ## v0.4.0 — lean-unbranded-landing — 2026-11-05
 
 Executor: Claude Sonnet 5.5 via `claude plugin eval` (with/without ablation, 3 runs per arm, 3 judge votes per assertion, Bash withheld because the host could not sandbox it). Directional only.

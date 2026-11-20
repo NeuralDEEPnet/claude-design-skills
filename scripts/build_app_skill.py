@@ -25,6 +25,7 @@ REFS = {
     "3d-object-design": "3d-object-design.md",
     "motion-pictures": "motion-pictures.md",
     "virtual-worlds": "virtual-worlds.md",
+    "design-review": "design-review.md",
 }
 
 
@@ -40,6 +41,12 @@ def relink(text: str) -> str:
     text = text.replace("../design-core/references/house-style.md", "house-style.md")
     text = text.replace("`references/house-style.md`", "`house-style.md`")
     text = text.replace("`references/learning-loop.md`", "`learning-loop.md`")
+    text = text.replace("../design-core/references/design-receipt.md", "design-receipt.md")
+    text = text.replace("`references/design-receipt.md`", "`design-receipt.md`")
+    for s in ("software-design", "image-design", "3d-object-design", "motion-pictures", "virtual-worlds"):
+        text = text.replace(f"`../{s}/SKILL.md`", f"`{s}.md`")
+    text = text.replace("the `design-review` skill", "`design-review.md`")
+    text = text.replace("route to `design-review`", "read `design-review.md`")
     text = text.replace("../design-core/SKILL.md", "core-process.md")
     text = text.replace("../<skill-name>/SKILL.md", "<skill-name>.md")
     text = text.replace("the repository's `docs/NEURALDEEP-INTEGRATIONS.md`",
@@ -58,8 +65,9 @@ def main() -> None:
     for skill, ref in REFS.items():
         src = (SKILLS / skill / "SKILL.md").read_text()
         (OUT / "references" / ref).write_text(relink(body(src)))
-    for ref in ("templates.md", "house-style.md", "learning-loop.md"):
-        shutil.copy(SKILLS / "design-core" / "references" / ref, OUT / "references" / ref)
+    for ref in ("templates.md", "house-style.md", "learning-loop.md", "design-receipt.md"):
+        src = (SKILLS / "design-core" / "references" / ref).read_text()
+        (OUT / "references" / ref).write_text(relink(src))
     build_3dj()
     print(f"built {OUT}")
 
