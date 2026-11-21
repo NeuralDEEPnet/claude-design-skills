@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — 2026-11-21
+
+- 3DJ Studio entry 0.11.1, which fixes the Claude directory's findings: no unrecognized `plugin.json` fields and no install or download-and-run commands. The app skill is rebuilt with the updated `references/3dj/configurator.md`.
+
 ## v0.5.0 — Design Receipts — 2026-11-20
 
 - **Design Receipt** (`design-core/references/design-receipt.md`, spec "Neuraldeep Design Receipt v1"): the evidence that ships with every deliverable at every depth — checks with method, result and threshold; decisions with traces and confidence labels (`measured · observed · inferred · assumed`, reused from the 3DJ Design Evidence Pack v1); a mandatory Not-done list; research with its tags and sources; a per-artifact AI-use disclosure; what would change the verdict; one next validation. Checks listed per medium. "No receipt, no handoff" in design-core, the director and all five specialists; the handoff template requires it.
