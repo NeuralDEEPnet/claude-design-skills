@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Receipts · Neuraldeep</title>
+<meta name="description" content="Every design Neuraldeep delivers ships with the evidence behind it: measured checks, traced decisions, what was not tested, and where AI was used.">
+<style>
+/* Layout: one column, 65ch measure, whitespace does the grouping. One ink, one paper, one accent. */
+:root{
+  --paper:#F4EFE6; --ink:#171A1C; --ink-2:#4E4F4F; --rule:#BDBAB4; --accent:#16607D; --wash:#BDE9FB;
+  --ok:#1E7A4A; --error:#B42318;
+  --font:"Avenir Next","Avenir","Inter",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --space:8px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#171A1C;--ink:#F4EFE6;--ink-2:#BDBAB4;--rule:#4E4F4F;--accent:#7FCBEA;--wash:#1B2A33;--ok:#5FC48A;--error:#F0857A;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#171A1C;--ink:#F4EFE6;--ink-2:#BDBAB4;--rule:#4E4F4F;--accent:#7FCBEA;--wash:#1B2A33;--ok:#5FC48A;--error:#F0857A;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-weight:400;font-size:17px;line-height:1.45}
+.wrap{max-width:68ch;margin:0 auto;padding-block:calc(var(--space)*8) calc(var(--space)*12);padding-left:16px;padding-right:16px}
+h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,7vw,56px)}
+h2{font-size:28px;margin-top:calc(var(--space)*10)}
+h3{font-size:20px;margin-top:calc(var(--space)*5)}
+p{margin:calc(var(--space)*2) 0 0;max-width:65ch}
+.lede{font-size:20px;color:var(--ink-2);margin-top:calc(var(--space)*3)}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0 0 calc(var(--space)*2)}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+.cta{display:inline-block;margin-top:calc(var(--space)*4);background:var(--accent);color:var(--paper);padding:14px 22px;border-radius:4px;font-weight:800;text-decoration:none;min-height:44px}
+.cta:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+ul{padding-left:1.2em;margin:calc(var(--space)*2) 0 0}
+li{margin-top:var(--space)}
+.receipt{margin-top:calc(var(--space)*4);border-top:1px solid var(--rule);padding-top:calc(var(--space)*3);font-size:15px}
+.receipt h3{margin-top:calc(var(--space)*3);font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.tbl{overflow-x:auto;margin-top:var(--space)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.pass{color:var(--ok);font-weight:800}.fail{color:var(--error);font-weight:800}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:calc(var(--space)*4);margin-top:calc(var(--space)*3)}
+.row>div{min-width:0}
+.small{font-size:14px;color:var(--ink-2)}
+.pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--wash);padding:12px 14px;border-radius:4px;overflow-x:auto;margin-top:calc(var(--space)*2)}
+footer{margin-top:calc(var(--space)*12);border-top:1px solid var(--rule);padding-top:calc(var(--space)*3);font-size:14px;color:var(--ink-2)}
+@media (prefers-reduced-motion: no-preference){.cta{transition:background .18s cubic-bezier(.2,.7,.2,1)}}
+</style>
+
+<main class="wrap">
+  <p class="eyebrow">Neuraldeep Design Studio</p>
+  <h1>Design with receipts.</h1>
+  <p class="lede">Every design we deliver ships with the evidence behind it: what was measured, what each decision traces to, what was not tested, and where AI was used. Prove it, before anyone asks.</p>
+  <a class="cta" href="https://github.com/NeuralDEEPnet/claude-design-skills">Get the skills</a>
+
+  <h2>Why now</h2>
+  <p>AI design tools are everywhere, and so is the question that follows every output: can you defend it? Clients ask how work was made. The European Accessibility Act has applied since June 2025. The EU AI Act's transparency duties took effect in August 2026. Generators answer none of that. A receipt does.</p>
+
+  <h2>What a Design Receipt is</h2>
+  <p>A short, structured record that travels with the deliverable. Same shape for a landing page, a poster, a printed part, a film, or a virtual world.</p>
+  <ul>
+    <li><strong>Checks with numbers.</strong> Contrast ratios, target sizes, wall thickness, frame time: method, result, threshold, pass or fail.</li>
+    <li><strong>Decisions with traces.</strong> Each important choice points to a user need, a constraint, or a design principle, with a confidence label: measured, observed, inferred, or assumed.</li>
+    <li><strong>The not-done list.</strong> What was not rendered, measured, or tested, and what to run instead. Always present. Never empty.</li>
+    <li><strong>AI use, in plain words.</strong> Which steps were AI-generated, AI-assisted, or human-made, and who reviewed them.</li>
+    <li><strong>One next test.</strong> The single validation that would most change the verdict.</li>
+  </ul>
+
+  <h2>A receipt, for real</h2>
+  <p class="small">Review receipt for a contractor-built signup page, produced by the <code>design-review</code> skill. Numbers computed with the WCAG 2.x formula.</p>
+  <div class="receipt">
+    <strong>Design Receipt · Tasklane signup page · 2026-11-20</strong>
+    <div class="small">Spec: Neuraldeep Design Receipt v1 · Depth: Rapid · Medium: software · Review, not authorship</div>
+    <h3>Verdict</h3>
+    <p>Do not ship. Four text roles fail contrast, form labels are hidden, and the primary button pulses forever.</p>
+    <h3>Checks</h3>
+    <div class="tbl"><table>
+      <tr><th>Check</th><th>Method</th><th>Result</th><th>Threshold</th><th>Pass</th></tr>
+      <tr><td>Body text #8a8a8a on white</td><td>WCAG 2.x</td><td>3.45:1</td><td>≥ 4.5:1</td><td class="fail">no</td></tr>
+      <tr><td>Hint text #b5b5b5 on white</td><td>WCAG 2.x</td><td>2.05:1</td><td>≥ 4.5:1</td><td class="fail">no</td></tr>
+      <tr><td>Button text on #4f8bff</td><td>WCAG 2.x</td><td>3.25:1</td><td>≥ 4.5:1</td><td class="fail">no</td></tr>
+      <tr><td>Link #9bbcff on white</td><td>WCAG 2.x</td><td>1.90:1</td><td>≥ 4.5:1</td><td class="fail">no</td></tr>
+      <tr><td>Heading #1a1a1a on white</td><td>WCAG 2.x</td><td>17.4:1</td><td>≥ 4.5:1</td><td class="pass">yes</td></tr>
+      <tr><td>Form labels visible</td><td>DOM read</td><td>display:none</td><td>visible</td><td class="fail">no</td></tr>
+      <tr><td>Reduced-motion alternative</td><td>CSS read</td><td>none</td><td>present</td><td class="fail">no</td></tr>
+    </table></div>
+    <h3>Not done</h3>
+    <ul>
+      <li>Not rendered in a browser at 375, 768 or 1440 px. Run it and check reflow at 320 px.</li>
+      <li>Keyboard path not walked on a device; focus ring not seen.</li>
+    </ul>
+    <h3>AI use</h3>
+    <p>Not stated by the contractor. Ask before disclosing.</p>
+    <h3>Next test</h3>
+    <p>Fix the five failures, then have two people who have never seen Tasklane sign up on a phone. Both complete without help, or the form is not done.</p>
+  </div>
+
+  <h2>Who it is for</h2>
+  <div class="row">
+    <div><h3>Studios and agencies</h3><p>Hand clients evidence with the work. Answer accessibility and AI-disclosure questions from the receipt, not from memory.</p></div>
+    <div><h3>Product teams</h3><p>Review what any tool produced, Figma, Canva, Claude Design, or a contractor, before it ships. Measured, prioritised, honest about gaps.</p></div>
+    <div><h3>Makers and restorers</h3><p>From a conversation to a parametric part with measured walls, overhangs and fit, printed in the EU. The receipt says what was measured and what still needs a test print.</p></div>
+  </div>
+
+  <h2>How to get it</h2>
+  <ul>
+    <li><strong>Claude Code:</strong> install the Neuraldeep Design Studio plugin, then ask for a review or a design. The receipt comes with the handoff.</li>
+    <li><strong>Claude app:</strong> add the single-file <code>design-studio</code> skill.</li>
+    <li><strong>Codex:</strong> open the sister repository and use <code>design-review</code> or any specialist skill.</li>
+    <li><strong>Private:</strong> the same skills and tools on your own hardware, for NDA work. Ask us.</li>
+  </ul>
+  <div class="pre">Review this landing page and give me a Design Receipt.</div>
+
+  <footer>
+    <p>A Design Receipt is evidence, not a certification or legal opinion. Geometry checks are diagnostics; print readiness needs a slicer and a physical part. Accessibility numbers cover the measured items, not a full audit. The receipt says so, every time.</p>
+    <p>Neural Deep Network Ltd, Malta. Skills are MIT-licensed. Contact: work@neuraldeep.net</p>
+  </footer>
+</main>
+
+</html>
