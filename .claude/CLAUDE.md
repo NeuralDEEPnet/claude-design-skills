@@ -20,7 +20,8 @@ This repository contains public design skills for Claude (Claude Code plugin + C
    - and agent inference.
 10. Keep specialist skills composable. Hybrid tasks should be coordinated through `design-director`.
 11. Keep the house style (`skills/design-core/references/house-style.md`) in two layers: lean delivery always; the clean default character only for unbranded briefs. Never let it override a client's own identity.
-12. Mirror substantive skill changes to the Codex edition (`NeuralDEEPnet/codex-openai-skills`, `.agents/skills/`), which shares the same skill bodies.
+12. Every handoff carries a Design Receipt (`skills/design-core/references/design-receipt.md`); never weaken the Not-done list or the AI-use disclosure, and never let a receipt read as a certification.
+13. Mirror substantive skill changes to the Codex edition (`NeuralDEEPnet/codex-openai-skills`, `.agents/skills/`), which shares the same skill bodies.
 
 ## Quality bar
 

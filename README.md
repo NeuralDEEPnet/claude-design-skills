@@ -34,7 +34,8 @@ Or copy any folder from `skills/` into `~/.claude/skills/` (keep `design-core` a
 | Skill | Use for |
 |---|---|
 | **design-director** | Multi-medium projects — routes, sequences, keeps one design DNA |
-| **design-core** | The shared studio process, depth modes, templates, and the lean-and-clean house style |
+| **design-core** | The shared studio process, depth modes, templates, the lean-and-clean house style, and the Design Receipt |
+| **design-review** | Review, audit or critique something that already exists and get a Design Receipt |
 | **software-design** | Websites, apps, dashboards, design systems, coded UI |
 | **image-design** | Key art, posters, product imagery, image-model prompts, identity marks |
 | **3d-object-design** | Physical and 3D-printable products, enclosures, CMF, manufacturing |
@@ -59,6 +60,10 @@ Scaled by depth:
 - **Rapid** — small, clear asks: short brief with assumptions, compact DNA, build, real-output check.
 - **Standard** (default) — every stage, kept tight.
 - **Full** — new products, rebrands, multi-medium launches.
+
+## Design Receipts
+
+Every deliverable ships with a **Design Receipt** (`skills/design-core/references/design-receipt.md`): measured checks with method and threshold, decisions traced to user needs, constraints or DNA with confidence labels, a mandatory list of what was *not* rendered, measured or tested, research with its evidence tags and sources, and a plain-words AI-use disclosure per artifact. It is what you hand a client, a reviewer, or a regulator when they ask "prove it". The `design-review` skill produces a receipt for work made elsewhere, including output from any AI design tool. A receipt is evidence, not a certification; it says so.
 
 ## House style — lean and clean
 
@@ -86,7 +91,7 @@ Fully usable without proprietary services. Where they fit a production step, the
 
 ## Evaluation
 
-`evals/` holds a prompt suite (26 tasks), four graded cases in the `claude plugin eval` layout (`evals/cases/`), and 20 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the final skill text vs 0.37 without it on Sonnet (directional, 6 runs each); see the same file.
+`evals/` holds a prompt suite (29 tasks), five graded cases in the `claude plugin eval` layout (`evals/cases/`), and 25 trigger tests. In a Sonnet A/B run, v0.2 passed 100% of graded checks vs 70% for v0.1 — details and caveats in [docs/EVAL-RESULTS.md](docs/EVAL-RESULTS.md). The v0.4 case `lean-unbranded-landing` scored 0.93 with the skills vs 0.37 without, and the v0.5 case `review-with-receipt` 0.85 vs 0.48, on Sonnet (directional, 6 runs each); see the same file.
 
 ```bash
 claude plugin eval skills/<skill-name>   # requires Claude Code

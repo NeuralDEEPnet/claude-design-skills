@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.5.0 — Design Receipts — 2026-11-20
+
+- **Design Receipt** (`design-core/references/design-receipt.md`, spec "Neuraldeep Design Receipt v1"): the evidence that ships with every deliverable at every depth — checks with method, result and threshold; decisions with traces and confidence labels (`measured · observed · inferred · assumed`, reused from the 3DJ Design Evidence Pack v1); a mandatory Not-done list; research with its tags and sources; a per-artifact AI-use disclosure; what would change the verdict; one next validation. Checks listed per medium. "No receipt, no handoff" in design-core, the director and all five specialists; the handoff template requires it.
+- **New skill `design-review`**: the critique-only entry point for work that already exists (URL, screenshot, export from any AI design tool, HTML, image, STL/STEP, video, prototype). Gets the real artifact in front of it, measures before it opines, runs the six lenses, orders fixes, and returns a review receipt that never guesses provenance and never claims certification.
+- Router and app skill bundle `design-receipt.md` and `design-review.md`.
+- **Evals**: graded case `review-with-receipt` (9 checks, a page with four real contrast failures and hidden labels), tasks review-01…03, 5 trigger queries.
+
 
 
 ## Unreleased — 2026-11-11

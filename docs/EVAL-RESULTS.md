@@ -1,5 +1,18 @@
 # Eval results
 
+## v0.5.0 — review-with-receipt — 2026-11-20
+
+Executor: Claude Sonnet via `claude plugin eval` (with/without ablation, 3 runs per arm, 3 judge votes per assertion, Bash withheld). Directional only.
+
+| Arm | Run 1 | Run 2 | Run 3 | Mean |
+|---|---|---|---|---|
+| with plugin | 7/9 | 7/9 | 8/9 | 0.81 |
+| without | 5/9 | 3/9 | 4/9 | 0.44 |
+
+Δ +0.37. Every with-run computed the four contrast failures with the WCAG formula, found the hidden labels and the infinite pulse, listed what was not done, wrote AI use as "not stated", and said the receipt is not a certification. All three with-runs skipped the six-lens critique: the skill's response shape listed verdict, findings, fixes and receipt and left the lenses as background work. The shape now names the lenses as a required section (one line per lens); rerun recorded below. The baseline found most contrast issues but never produced a receipt, a Not-done list, or the non-certification statement in two of three runs, and in one run certified compliance it had not measured.
+
+**Reruns.** With the lenses required: 0.67 with vs 0.56 without (the lenses passed in two of three runs, but a method preamble pushed the verdict off the first line and the receipt came as loose bullets). With the verdict forced to the first line and the receipt layout inlined in the skill: **0.85 with (8/9, 9/9, 6/9) vs 0.48 without (4/9, 5/9, 4/9), Δ +0.37**. The remaining with-run misses are one run that compressed the lenses and the Not-done list, which is run-to-run variance on Sonnet rather than a missing instruction; the baseline never produced a receipt, never ran the lenses, and never disclaimed certification. Three runs per arm; treat the gap as the signal, not the absolute.
+
 ## v0.4.0 — lean-unbranded-landing — 2026-11-05
 
 Executor: Claude Sonnet 5.5 via `claude plugin eval` (with/without ablation, 3 runs per arm, 3 judge votes per assertion, Bash withheld because the host could not sandbox it). Directional only.

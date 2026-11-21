@@ -1,6 +1,6 @@
 ---
 name: design-studio
-description: Neuraldeep Design Studio — a professional multidisciplinary design process for websites, apps and dashboards, still images and key art, physical and 3D-printable products, motion and video, and VR/AR/virtual worlds. Use whenever someone asks to design, redesign, art-direct, critique, or plan the look and feel of something — including vague briefs like "make it look premium", "design a landing page", "make a printable robot", "storyboard a launch video", or "build a VR showroom" — and for launches that span several media. Do not use for purely mechanical edits with no design decision (e.g. "change the button to blue", "resize these photos").
+description: Neuraldeep Design Studio — a professional multidisciplinary design process for websites, apps and dashboards, still images and key art, physical and 3D-printable products, motion and video, and VR/AR/virtual worlds, with a Design Receipt (measured checks, traceability, not-done list, AI-use disclosure) on every deliverable. Use whenever someone asks to design, redesign, art-direct, critique, review, audit, or plan the look and feel of something — including vague briefs like "make it look premium", "design a landing page", "make a printable robot", "storyboard a launch video", or "build a VR showroom" — and for launches that span several media. Do not use for purely mechanical edits with no design decision (e.g. "change the button to blue", "resize these photos").
 ---
 
 # Design Studio
@@ -16,6 +16,8 @@ This file routes the work. The detail lives in `references/`; read only what the
 | `references/core-process.md` | Always, for Standard or Full depth — the 13-stage studio process |
 | `references/templates.md` | When writing any studio artifact (brief, user panel, DNA, concept cards, critique, handoff) |
 | `references/house-style.md` | Always, at Step 0 — lean delivery rules and response budgets; plus the clean default character and starter tokens when the brief has no brand of its own |
+| `references/design-receipt.md` | At every handoff — the Design Receipt every deliverable ships with: checks with numbers, Not done, AI use |
+| `references/design-review.md` | Something already exists and the ask is to review, audit, critique, or certify it; returns a receipt |
 | `references/learning-loop.md` | The user asks to improve these skills from a lesson learned |
 | `references/software-design.md` | Websites, apps, dashboards, design systems, coded UI |
 | `references/image-design.md` | Key art, posters, product images, prompts for image models, logos/identity |
@@ -57,6 +59,7 @@ Brief → Research → Inspiration panel → User panel → Design DNA → ≥3 
 - **Review what people will experience** (the rendered page, the image at final size, the model from several views, the film at speed, the world at scale). If you can't render it, say so and give the checks.
 - **Accessibility, feasibility, and performance are design inputs**, with concrete thresholds in each discipline reference.
 - **Lean and clean.** Answer first, artifacts not essays, one next step. Subtract before you add. An unbranded brief starts from the clean default character (one ink, one paper, one accent; whitespace as structure; two type weights; one-line copy; honest surfaces) and says so; a branded brief never inherits it.
+- **Every deliverable ships with a Design Receipt**: measured checks with method and threshold, decisions with traces and confidence labels, a mandatory Not-done list, research tags with sources, and an AI-use disclosure. No receipt, no handoff.
 - **Targeted revisions stay targeted.** A change to an approved design reuses its brief and DNA; implement, inspect, hand off.
 
 ## Producing the output
@@ -69,4 +72,4 @@ If connected, **SketchMonkey** can render image concepts, variants, multi-format
 
 ## Final quality test
 
-Did we solve the right problem? Can major decisions be traced to users, constraints, or DNA? Did we explore before converging? Did we critique a real artifact? Is it coherent, not merely attractive? Did the reduction pass run? Is the response inside its budget? What evidence would change our mind?
+Did we solve the right problem? Can major decisions be traced to users, constraints, or DNA? Did we explore before converging? Did we critique a real artifact? Is it coherent, not merely attractive? Did the reduction pass run? Is the response inside its budget? Does the receipt carry numbers, a Not-done list and an AI-use line? What evidence would change our mind?

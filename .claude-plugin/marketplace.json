@@ -11,8 +11,8 @@
     {
       "name": "neuraldeep-design-studio",
       "source": "./",
-      "description": "Design-director, design-core, and five specialist design skills, with Neuraldeep's lean and clean house style.",
-      "version": "0.4.0"
+      "description": "Design-director, design-core, design-review and five specialist design skills, with Neuraldeep's lean and clean house style and a Design Receipt on every deliverable.",
+      "version": "0.5.0"
     },
     {
       "name": "3dj-studio",
