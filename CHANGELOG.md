@@ -2,6 +2,7 @@
 
 ## Unreleased — 2026-11-21
 
+- 3DJ Studio entry 0.11.4. Its 0.11.3 keeps the plugin to its own connector, and 0.11.4 restores the `displayName` that 0.11.2 dropped.
 - 3DJ Studio entry 0.11.1, which fixes the Claude directory's findings: no unrecognized `plugin.json` fields and no install or download-and-run commands. The app skill is rebuilt with the updated `references/3dj/configurator.md`.
 
 ## v0.5.0 — Design Receipts — 2026-11-20
